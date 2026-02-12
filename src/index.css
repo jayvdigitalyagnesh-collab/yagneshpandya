@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Satisfy&display=swap');
+
+:root {
+  /* Updated IWTYTBR Palette */
+  --color-coral: #FF3B30;
+  /* Brighter, more reddish-orange */
+  --bg-white: #FFFFFF;
+  --bg-dark: #121212;
+  /* Darker black */
+  --text-black: #111111;
+  --text-gray: #555555;
+
+  --font-primary: 'Inter', -apple-system, sans-serif;
+  --font-script: 'Satisfy', cursive;
+
+  --container-width: 1300px;
+  /* Wider container for modern screens */
+  --section-padding: 100px 0;
+
+  --transition: all 0.2s ease-out;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-white);
+  color: var(--text-black);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* Container Utility */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  /* Consistent padding */
+  width: 100%;
+}
+
+/* Button Utilities */
+.btn-coral {
+  display: inline-block;
+  background-color: var(--color-coral);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn-coral:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 59, 48, 0.25);
+}
+
+/* Section Utilities */
+section {
+  width: 100%;
+  position: relative;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid System */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+}
