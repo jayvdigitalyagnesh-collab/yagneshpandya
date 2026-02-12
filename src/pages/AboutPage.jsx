@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Check, Star, Mic, BookOpen } from 'lucide-react';
 import About from '../components/About'; // The "I'M YAGNESH" Hero
 import Contact from '../components/Contact';
+import { Reveal } from '../components/Reveal';
 
 const AboutPage = () => {
     useEffect(() => {
@@ -32,10 +33,12 @@ const AboutPage = () => {
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
                         <div>
-                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '2rem', fontSize: '3rem' }}>
-                                YAGNESH'S <br />
-                                <span style={{ color: 'var(--color-coral)' }}>EARLY LEARNINGS</span>
-                            </h2>
+                            <Reveal>
+                                <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '2rem', fontSize: '3rem' }}>
+                                    YAGNESH'S <br />
+                                    <span style={{ color: 'var(--color-coral)' }}>EARLY LEARNINGS</span>
+                                </h2>
+                            </Reveal>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                                 {[
                                     "Started with zero capital, scaling through pure organic strategies.",
@@ -66,9 +69,11 @@ const AboutPage = () => {
             <section style={{ padding: 'var(--section-padding)', backgroundColor: '#F8F8F8' }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                        <h2 className="section-title" style={{ color: 'black' }}>
-                            SO WHAT IS YOUR RICH LIFE? <br /> YOU DECIDE.
-                        </h2>
+                        <Reveal width="100%">
+                            <h2 className="section-title" style={{ color: 'black' }}>
+                                SO WHAT IS YOUR RICH LIFE? <br /> YOU DECIDE.
+                            </h2>
+                        </Reveal>
                     </div>
                     <div className="grid-3">
                         {[
@@ -94,7 +99,9 @@ const AboutPage = () => {
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
                         <div>
-                            <h2 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '1rem' }}>Stay In The Know</h2>
+                            <Reveal>
+                                <h2 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '1rem' }}>Stay In The Know</h2>
+                            </Reveal>
                             <p style={{ fontSize: '1.2rem', color: '#666', marginBottom: '2rem' }}>
                                 Be the first to receive new releases, special offers, and more.
                             </p>
@@ -128,9 +135,11 @@ const AboutPage = () => {
                         />
                         <div>
                             <span style={{ color: 'var(--color-coral)', fontWeight: 800, letterSpacing: '2px', textTransform: 'uppercase' }}>Expertise</span>
-                            <h2 style={{ fontSize: '3rem', fontWeight: 900, margin: '1rem 0 2rem', textTransform: 'uppercase' }}>
-                                Mastering Money & <br /> Building A Rich Life
-                            </h2>
+                            <Reveal>
+                                <h2 style={{ fontSize: '3rem', fontWeight: 900, margin: '1rem 0 2rem', textTransform: 'uppercase' }}>
+                                    Mastering Money & <br /> Building A Rich Life
+                                </h2>
+                            </Reveal>
                             <div style={{ display: 'flex', gap: '3rem' }}>
                                 <div>
                                     <div style={{ fontSize: '2.5rem', fontWeight: 900 }}>50K+</div>
@@ -151,9 +160,11 @@ const AboutPage = () => {
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
                         <div style={{ order: 2 }}>{/* Text Side on Right */}
-                            <h2 style={{ fontSize: '3rem', fontWeight: 900, textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-                                Creator of Premium <br /> Digital Programs
-                            </h2>
+                            <Reveal>
+                                <h2 style={{ fontSize: '3rem', fontWeight: 900, textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+                                    Creator of Premium <br /> Digital Programs
+                                </h2>
+                            </Reveal>
                             <p style={{ fontSize: '1.2rem', color: '#555', marginBottom: '2rem' }}>
                                 Rigorously tested systems to help you start a business, find your dream job, or master your productivity.
                             </p>
@@ -177,9 +188,11 @@ const AboutPage = () => {
                 </div>
                 <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                     <div style={{ maxWidth: '600px' }}>
-                        <h2 style={{ fontSize: '3.5rem', lineHeight: 1, marginBottom: '2rem', textTransform: 'uppercase' }}>
-                            The Talk With <br /> Yagnesh Podcast
-                        </h2>
+                        <Reveal>
+                            <h2 style={{ fontSize: '3.5rem', lineHeight: 1, marginBottom: '2rem', textTransform: 'uppercase' }}>
+                                The Talk With <br /> Yagnesh Podcast
+                            </h2>
+                        </Reveal>
                         <a href="#" className="btn-coral" style={{ padding: '1rem 2rem' }}>Listen Now</a>
                     </div>
                 </div>

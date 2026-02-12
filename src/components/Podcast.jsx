@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Reveal } from './Reveal';
 
 const Podcast = () => {
     return (
@@ -44,17 +45,19 @@ const Podcast = () => {
                         Listen & Learn
                     </span>
 
-                    <h2 style={{
-                        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                        fontWeight: 900,
-                        color: 'white',
-                        marginBottom: '1.5rem',
-                        textTransform: 'uppercase',
-                        lineHeight: 0.95,
-                        letterSpacing: '-1px'
-                    }}>
-                        Talk With Yagnesh<br />Podcast
-                    </h2>
+                    <Reveal>
+                        <h2 style={{
+                            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                            fontWeight: 900,
+                            color: 'white',
+                            marginBottom: '1.5rem',
+                            textTransform: 'uppercase',
+                            lineHeight: 0.95,
+                            letterSpacing: '-1px'
+                        }}>
+                            Talk With Yagnesh<br />Podcast
+                        </h2>
+                    </Reveal>
 
                     <p style={{
                         fontSize: '1.2rem',

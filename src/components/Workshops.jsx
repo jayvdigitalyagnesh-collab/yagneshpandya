@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Reveal } from './Reveal';
 
 const Workshops = () => {
     return (
@@ -43,17 +44,19 @@ const Workshops = () => {
                             Live Experiences
                         </span>
 
-                        <h2 style={{
-                            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-                            fontWeight: 900,
-                            lineHeight: 0.95,
-                            marginBottom: '1.5rem',
-                            textTransform: 'uppercase',
-                            letterSpacing: '-1px'
-                        }}>
-                            Business Mastery<br />
-                            <span style={{ color: 'white' }}>Seminars</span>
-                        </h2>
+                        <Reveal>
+                            <h2 style={{
+                                fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+                                fontWeight: 900,
+                                lineHeight: 0.95,
+                                marginBottom: '1.5rem',
+                                textTransform: 'uppercase',
+                                letterSpacing: '-1px'
+                            }}>
+                                Business Mastery<br />
+                                <span style={{ color: 'white' }}>Seminars</span>
+                            </h2>
+                        </Reveal>
 
                         <p style={{
                             fontSize: '1.2rem',
@@ -98,7 +101,7 @@ const Workshops = () => {
                     minHeight: '500px'
                 }}>
                     <img
-                        src="https://images.unsplash.com/photo-1544928147-79a2e746b50d?q=80&w=2070&auto=format&fit=crop"
+                        src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1600&q=80"
                         alt="Yagnesh Workshop"
                         style={{
                             width: '100%',

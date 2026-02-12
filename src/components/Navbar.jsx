@@ -25,9 +25,9 @@ const Navbar = () => {
     { name: 'About', path: '/about', isExternal: false },
     { name: 'Agency', path: 'https://www.digitalyagnesh.com/', isExternal: true },
     { name: 'Podcast', path: '/podcast', isExternal: false }, // Updated to dedicated page
-    { name: 'Events', path: '/#workshops', isExternal: false },
-    { name: 'Coaching', path: '/#contact', isExternal: false },
-    { name: 'Results', path: '/#results', isExternal: false },
+    { name: 'Events', path: '/events', isExternal: false },
+    { name: 'Coaching', path: '/coaching', isExternal: false },
+
   ];
 
   return (

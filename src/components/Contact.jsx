@@ -1,4 +1,5 @@
 import React from 'react';
+import { Reveal } from './Reveal';
 
 const Contact = () => {
     return (
@@ -18,17 +19,19 @@ const Contact = () => {
                     }}>
                         Get Started
                     </span>
-                    <h2 style={{
-                        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                        fontWeight: 900,
-                        color: 'white',
-                        marginBottom: '1.5rem',
-                        textTransform: 'uppercase',
-                        lineHeight: 1
-                    }}>
-                        Ready To Build<br />
-                        Your Rich Life?
-                    </h2>
+                    <Reveal>
+                        <h2 style={{
+                            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                            fontWeight: 900,
+                            color: 'white',
+                            marginBottom: '1.5rem',
+                            textTransform: 'uppercase',
+                            lineHeight: 1
+                        }}>
+                            Ready To Build<br />
+                            Your Rich Life?
+                        </h2>
+                    </Reveal>
 
                     <p style={{
                         fontSize: '1.2rem',

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Mic, Headphones, ArrowRight } from 'lucide-react';
 import Contact from '../components/Contact';
+import { Reveal } from '../components/Reveal';
 
 const PodcastPage = () => {
     useEffect(() => {
@@ -102,7 +103,11 @@ const PodcastPage = () => {
             {/* 2. LATEST EPISODE */}
             <section style={{ padding: 'var(--section-padding)', backgroundColor: 'white' }}>
                 <div className="container">
-                    <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '2rem' }}>THE LATEST EPISODE</h2>
+                    <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
+                        <Reveal>
+                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 0 }}>THE LATEST EPISODE</h2>
+                        </Reveal>
+                    </div>
                     <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden' }}>
                         <iframe
                             src="https://www.youtube.com/embed/sURQUtze_z8"
@@ -114,43 +119,53 @@ const PodcastPage = () => {
                 </div>
             </section>
 
-            {/* 3. ALL EPISODES GRID */}
-            <section style={{ padding: 'var(--section-padding)', backgroundColor: '#F9F9F9' }}>
+            {/* 3. ALL EPISODES GRID - VIDEO GALLERY */}
+            <section style={{ padding: '6rem 0', backgroundColor: '#F9F9F9' }}>
                 <div className="container">
-                    <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '3rem' }}>ALL PODCAST EPISODES</h2>
-                    <div className="grid-2" style={{ gap: '2rem' }}>
-                        {episodes.map((ep, i) => (
+                    <div style={{ textAlign: 'left', marginBottom: '3rem' }}>
+                        <Reveal>
+                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 0 }}>ALL PODCAST EPISODES</h2>
+                        </Reveal>
+                    </div>
+                    <div className="grid-2" style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', // Responsive grid
+                        gap: '2rem'
+                    }}>
+                        {[
+                            "FVQVq-91594",
+                            "sURQUtze_z8",
+                            "xFsmMfyMnoo",
+                            "SKkwFbBDMBU",
+                            "j9MGFILl50k",
+                            "2flgQ6F9Zcg"
+                        ].map((videoId, i) => (
                             <div key={i} style={{
                                 backgroundColor: 'white',
-                                padding: '2.5rem',
                                 border: '1px solid #eee',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'space-between',
-                                minHeight: '200px'
+                                borderRadius: '8px',
+                                overflow: 'hidden',
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
                             }}>
-                                <div>
-                                    <div style={{ fontSize: '0.85rem', color: '#888', marginBottom: '1rem', fontWeight: 600 }}>{ep.date}</div>
-                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, lineHeight: 1.3, marginBottom: '1.5rem' }}>
-                                        {ep.title}
-                                    </h3>
+                                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, backgroundColor: '#000' }}>
+                                    <iframe
+                                        src={`https://www.youtube.com/embed/${videoId}`}
+                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                                        allowFullScreen
+                                        title={`Podcast Episode ${i + 1}`}
+                                    />
                                 </div>
-                                <a href={ep.link} style={{
-                                    color: 'var(--color-coral)',
-                                    fontWeight: 700,
-                                    textTransform: 'uppercase',
-                                    fontSize: '0.9rem',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.5rem'
-                                }}>
-                                    Listen Now <ArrowRight size={16} />
-                                </a>
+                                <div style={{ padding: '1.5rem' }}>
+                                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem' }}>Episode {i + 1}</h3>
+                                    <a href={`https://youtu.be/${videoId}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-coral)', fontWeight: 600, fontSize: '0.9rem' }}>
+                                        Watch on YouTube ↗
+                                    </a>
+                                </div>
                             </div>
                         ))}
                     </div>
-                    <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-                        <button className="btn-coral">View All Episodes</button>
+                    <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+                        <button className="btn-coral">View More Videos</button>
                     </div>
                 </div>
             </section>
@@ -170,16 +185,18 @@ const PodcastPage = () => {
 
                         {/* Right: Minimalist Bold Text */}
                         <div>
-                            <h2 style={{
-                                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                                fontWeight: 900,
-                                lineHeight: 1,
-                                marginBottom: '2.5rem',
-                                textTransform: 'uppercase',
-                                color: 'black'
-                            }}>
-                                Want to be on <br /> the Podcast?
-                            </h2>
+                            <Reveal>
+                                <h2 style={{
+                                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                                    fontWeight: 900,
+                                    lineHeight: 1,
+                                    marginBottom: '2.5rem',
+                                    textTransform: 'uppercase',
+                                    color: 'black'
+                                }}>
+                                    Want to be on <br /> the Podcast?
+                                </h2>
+                            </Reveal>
                             {/* Minimalist Button */}
                             <a href="#apply" className="btn-coral" style={{
                                 padding: '1.2rem 3rem',
@@ -196,17 +213,58 @@ const PodcastPage = () => {
             </section>
 
             {/* 5. LEAD MAGNET / DARK SECTION */}
-            <section style={{ padding: '6rem 0', backgroundColor: 'black', color: 'white', textAlign: 'center' }}>
-                <div className="container">
-                    <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>As heard on the podcast...</h2>
-                    <p style={{ fontSize: '1.2rem', color: '#ccc', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
-                        Download the free Conscious Spending Plan template so you can spend guilt-free on the things you love.
+            <section style={{
+                padding: '8rem 0',
+                backgroundColor: 'black',
+                color: 'white',
+                textAlign: 'center',
+                backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2600)', // Brighter Crowd/Stage image
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+            }}>
+                <div className="container" style={{ maxWidth: '700px' }}>
+                    <Reveal width="100%">
+                        <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-1px' }}>
+                            As heard on the <br /> podcast...
+                        </h2>
+                    </Reveal>
+                    <p style={{ fontSize: '1.2rem', color: '#eee', marginBottom: '3rem', lineHeight: 1.5 }}>
+                        As heard on the podcast... Get Yagnesh's Conscious Spending Plan so you can spend guilt-free on the things you love:
                     </p>
-                    <div style={{ maxWidth: '500px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        <input type="text" placeholder="First Name" style={{ padding: '1rem', borderRadius: '4px', border: 'none' }} />
-                        <input type="email" placeholder="Email Address" style={{ padding: '1rem', borderRadius: '4px', border: 'none' }} />
-                        <button className="btn-coral" style={{ width: '100%', padding: '1rem', borderRadius: '4px' }}>
-                            Send Me The Guide
+                    <div style={{ maxWidth: '550px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                        <input
+                            type="text"
+                            placeholder="First Name"
+                            style={{
+                                padding: '1.2rem',
+                                borderRadius: '4px',
+                                border: 'none',
+                                fontSize: '1rem',
+                                outline: 'none'
+                            }}
+                        />
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            style={{
+                                padding: '1.2rem',
+                                borderRadius: '4px',
+                                border: 'none',
+                                fontSize: '1rem',
+                                outline: 'none'
+                            }}
+                        />
+                        <button className="btn-coral" style={{
+                            width: '100%',
+                            padding: '1.2rem',
+                            borderRadius: '4px',
+                            fontSize: '1.1rem',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                            marginTop: '0.5rem'
+                        }}>
+                            Send me the Plan (FREE)
                         </button>
                     </div>
                 </div>

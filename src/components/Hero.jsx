@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Reveal } from './Reveal';
 
 const Hero = () => {
     // YouTube Video ID
@@ -60,34 +61,38 @@ const Hero = () => {
 
                 {/* Content - ALIGNED TO GLOBAL CONTAINER */}
                 <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        style={{ maxWidth: '900px' }}
-                    >
-                        <h1 style={{
-                            fontSize: 'clamp(3.5rem, 6.5vw, 6.5rem)',
-                            fontWeight: 900,
-                            color: 'white',
-                            lineHeight: 0.9,
-                            marginBottom: '2rem',
-                            textTransform: 'uppercase',
-                            letterSpacing: '-2px',
-                            textShadow: '0 4px 20px rgba(0,0,0,0.5)'
-                        }}>
-                            Your Rich Life<br />
-                            Starts Here
-                        </h1>
+                    <div style={{ maxWidth: '900px' }}>
+                        <Reveal>
+                            <h1 style={{
+                                fontSize: 'clamp(3.5rem, 6.5vw, 6.5rem)',
+                                fontWeight: 900,
+                                color: 'white',
+                                lineHeight: 0.9,
+                                marginBottom: '2rem',
+                                textTransform: 'uppercase',
+                                letterSpacing: '-2px',
+                                textShadow: '0 4px 20px rgba(0,0,0,0.5)'
+                            }}>
+                                Your Rich Life<br />
+                                Starts Here
+                            </h1>
+                        </Reveal>
 
-                        <a href="#contact" className="btn-coral" style={{
-                            fontSize: '1.1rem',
-                            padding: '1.2rem 3rem',
-                            boxShadow: '0 4px 10px rgba(0,0,0,0.3)'
-                        }}>
+                        <motion.a
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5 }}
+                            href="#contact"
+                            className="btn-coral"
+                            style={{
+                                fontSize: '1.1rem',
+                                padding: '1.2rem 3rem',
+                                boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+                                display: 'inline-block'
+                            }}>
                             Get Coaching From Yagnesh
-                        </a>
-                    </motion.div>
+                        </motion.a>
+                    </div>
                 </div>
             </section>
         </>

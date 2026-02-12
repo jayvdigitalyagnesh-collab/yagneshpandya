@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Reveal } from './Reveal';
 
 const Testimonials = () => {
     const testimonials = [
@@ -28,18 +29,20 @@ const Testimonials = () => {
             <div className="container">
                 {/* Centered Header Layout matching screenshot */}
                 <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-                    <h2 style={{
-                        fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-                        fontWeight: 900,
-                        color: 'black',
-                        lineHeight: 1,
-                        marginBottom: '1.5rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '-1px'
-                    }}>
-                        TIME TESTED.<br />
-                        PROVEN RESULTS.
-                    </h2>
+                    <Reveal width="100%">
+                        <h2 style={{
+                            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+                            fontWeight: 900,
+                            color: 'black',
+                            lineHeight: 1,
+                            marginBottom: '1.5rem',
+                            textTransform: 'uppercase',
+                            letterSpacing: '-1px'
+                        }}>
+                            TIME TESTED.<br />
+                            PROVEN RESULTS.
+                        </h2>
+                    </Reveal>
                     <p style={{
                         fontSize: '1.25rem',
                         color: '#444',

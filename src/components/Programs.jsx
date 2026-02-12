@@ -1,18 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Reveal } from './Reveal';
 
 const Programs = () => {
     const programs = [
         {
             title: 'Digital Yagnesh',
             description: 'Premium digital marketing, branding, and web development for high-growth companies.',
-            image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800',
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
             link: 'https://www.digitalyagnesh.com/'
         },
         {
             title: 'Talk With Yagnesh',
             description: 'Deep-dive conversations with entrepreneurs and innovators. Real stories, actionable insights.',
-            image: 'https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=800',
+            image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&q=80',
             link: 'https://www.youtube.com/@talkwithyagnesh'
         }
     ];
@@ -34,16 +35,18 @@ const Programs = () => {
                     }}>
                         Programs & Products
                     </span>
-                    <h2 style={{
-                        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                        fontWeight: 900,
-                        textTransform: 'uppercase',
-                        lineHeight: 1,
-                        marginBottom: '1rem'
-                    }}>
-                        Step-By-Step Programs For<br />
-                        Creating Your <span style={{ color: 'var(--color-coral)' }}>Rich Life</span>
-                    </h2>
+                    <Reveal>
+                        <h2 style={{
+                            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                            fontWeight: 900,
+                            textTransform: 'uppercase',
+                            lineHeight: 1,
+                            marginBottom: '1rem'
+                        }}>
+                            Step-By-Step Programs For<br />
+                            Creating Your <span style={{ color: 'var(--color-coral)' }}>Rich Life</span>
+                        </h2>
+                    </Reveal>
                     <p style={{
                         fontSize: '1.2rem',
                         color: 'var(--text-gray)',

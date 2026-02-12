@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Reveal } from './Reveal';
 
 const About = () => {
     const accolades = [
@@ -122,19 +123,23 @@ const About = () => {
                 paddingBottom: '2vh',
                 pointerEvents: 'none' // Let clicks pass through
             }}>
-                <h2 style={{
-                    fontSize: 'clamp(3rem, 13vw, 13rem)', // Massive responsive text
-                    fontWeight: 900,
-                    color: 'white',
-                    lineHeight: 0.8,
-                    margin: 0,
-                    textTransform: 'uppercase',
-                    letterSpacing: '-0.02em',
-                    whiteSpace: 'nowrap',
-                    textShadow: '0 10px 30px rgba(0,0,0,0.5)'
-                }}>
-                    I'M YAGNESH PANDYA.
-                </h2>
+                <Reveal width="100%">
+                    <h2 style={{
+                        fontSize: '8vw', // Optimized to fit ~19 chars edge-to-edge without cropping
+                        width: '100%',
+                        fontWeight: 900,
+                        color: 'white',
+                        lineHeight: 0.85,
+                        margin: 0,
+                        textTransform: 'uppercase',
+                        letterSpacing: '-0.02em',
+                        whiteSpace: 'nowrap',
+                        textAlign: 'center',
+                        textShadow: '0 10px 30px rgba(0,0,0,0.5)'
+                    }}>
+                        I'M YAGNESH PANDYA.
+                    </h2>
+                </Reveal>
             </div>
 
             <style dangerouslySetInnerHTML={{
