@@ -69,18 +69,7 @@ const Navbar = () => {
           display: 'flex',
           alignItems: 'center',
         }}>
-          <span style={{
-            fontFamily: '"Satisfy", cursive',
-            fontSize: '2.2rem',
-            color: 'white',
-            textAlign: 'left',
-            lineHeight: 1,
-            fontWeight: 400,
-            textTransform: 'none',
-            letterSpacing: '0'
-          }}>
-            Yagnesh Pandya
-          </span>
+          <img src="/sig.png" alt="Yagnesh Pandya" style={{ height: '80px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
         </NavLink>
 
         {/* Desktop Nav */}

@@ -30,14 +30,7 @@ const Footer = () => {
 
                         {/* COLUMN 1: LOGO */}
                         <div>
-                            <span style={{
-                                fontFamily: '"Satisfy", cursive',
-                                fontSize: '2.5rem',
-                                color: 'white',
-                                lineHeight: 1
-                            }}>
-                                Yagnesh Pandya
-                            </span>
+                            <img src="/sig.png" alt="Yagnesh Pandya" style={{ height: '100px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
                             <p style={{ color: '#666', fontSize: '0.8rem', marginTop: '0.5rem' }}>Digital Yagnesh</p>
                         </div>
 

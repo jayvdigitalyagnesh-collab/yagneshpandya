@@ -7,7 +7,7 @@ const EventsPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
+ 
     const events = [
         {
             date: "FEB 11",

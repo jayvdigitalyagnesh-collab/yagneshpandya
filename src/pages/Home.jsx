@@ -4,6 +4,7 @@ import About from '../components/About'; // We can keep the hero version or remo
 import Programs from '../components/Programs';
 import Workshops from '../components/Workshops';
 import Podcast from '../components/Podcast';
+import YoutubeGrid from '../components/YoutubeGrid';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 
@@ -15,6 +16,7 @@ const Home = () => {
             <Programs />
             <Workshops />
             <Podcast />
+            <YoutubeGrid />
             <Testimonials />
             <Contact />
         </div>
