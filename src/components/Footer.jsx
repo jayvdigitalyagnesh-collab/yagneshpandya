@@ -32,11 +32,11 @@ const Footer = () => {
                         <div>
                             <span style={{
                                 fontFamily: '"Satisfy", cursive',
-                                fontSize: '3rem',
+                                fontSize: '2.5rem',
                                 color: 'white',
                                 lineHeight: 1
                             }}>
-                                DY
+                                Yagnesh Pandya
                             </span>
                             <p style={{ color: '#666', fontSize: '0.8rem', marginTop: '0.5rem' }}>Digital Yagnesh</p>
                         </div>
