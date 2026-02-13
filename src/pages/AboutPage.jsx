@@ -10,23 +10,14 @@ const AboutPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const mediaLogos = ["FORBES", "ENTREPRENEUR", "INC.", "FAST COMPANY", "BUSINESS INSIDER"];
+
 
     return (
         <div className="about-page">
             {/* 1. HERO SECTION (Already Built) */}
             <About />
 
-            {/* 2. MEDIA BAR */}
-            <div style={{ borderBottom: '1px solid #eee', padding: '2rem 0', backgroundColor: 'white' }}>
-                <div className="container" style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', opacity: 0.5 }}>
-                    {mediaLogos.map((logo, i) => (
-                        <span key={i} style={{ fontSize: '1.2rem', fontWeight: 900, fontFamily: 'var(--font-primary)', letterSpacing: '2px', color: '#888' }}>
-                            {logo}
-                        </span>
-                    ))}
-                </div>
-            </div>
+
 
             {/* 3. EARLY LEARNINGS SECTION */}
             <section style={{ padding: 'var(--section-padding)', backgroundColor: 'white' }}>
@@ -115,7 +106,7 @@ const AboutPage = () => {
                         </div>
                         <div>
                             <img
-                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000"
+                                src="/p1.png"
                                 alt="Yagnesh Meeting"
                                 style={{ width: '100%', borderRadius: '8px' }}
                             />
@@ -129,7 +120,7 @@ const AboutPage = () => {
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
                         <img
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000"
+                            src="/p1.png"
                             alt="Yagnesh Portrait"
                             style={{ width: '100%', borderRadius: '8px', filter: 'grayscale(100%)' }}
                         />

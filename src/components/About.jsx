@@ -90,13 +90,13 @@ const About = () => {
                         backgroundColor: '#000' // Placeholder bg color if image loads slow
                     }}>
                         <img
-                            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2600&auto=format&fit=crop"
+                            src="/p1.png"
                             alt="Yagnesh Pandya"
                             style={{
                                 width: '100%',
                                 height: '100%',
                                 objectFit: 'cover',
-                                objectPosition: 'center 20%' // Adjust focus
+                                objectPosition: 'center 20%'
                             }}
                         />
                         {/* Dark Overlay for Text Readability at bottom */}

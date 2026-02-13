@@ -177,9 +177,9 @@ const PodcastPage = () => {
                         {/* Left: Studio Image with Grey Background */}
                         <div style={{ backgroundColor: '#F0F0F0', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', height: '100%', minHeight: '500px' }}>
                             <img
-                                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop"
+                                src="/p1.png"
                                 alt="Yagnesh Portrait"
-                                style={{ width: '85%', height: 'auto', objectFit: 'cover', display: 'block' }}
+                                style={{ width: '85%', height: 'auto', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
                             />
                         </div>
 
@@ -218,9 +218,9 @@ const PodcastPage = () => {
                 backgroundColor: 'black',
                 color: 'white',
                 textAlign: 'center',
-                backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2600)', // Brighter Crowd/Stage image
+                backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/p2.png)', // Using p2.png
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'center 20%',
                 backgroundRepeat: 'no-repeat'
             }}>
                 <div className="container" style={{ maxWidth: '700px' }}>

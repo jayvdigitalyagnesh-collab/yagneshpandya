@@ -7,13 +7,13 @@ const Programs = () => {
         {
             title: 'Digital Yagnesh',
             description: 'Premium digital marketing, branding, and web development for high-growth companies.',
-            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+            image: '/dy.png',
             link: 'https://www.digitalyagnesh.com/'
         },
         {
             title: 'Talk With Yagnesh',
             description: 'Deep-dive conversations with entrepreneurs and innovators. Real stories, actionable insights.',
-            image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&q=80',
+            image: '/podcast.png',
             link: 'https://www.youtube.com/@talkwithyagnesh'
         }
     ];

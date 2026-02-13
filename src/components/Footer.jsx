@@ -2,16 +2,7 @@ import React from 'react';
 import { Instagram, Youtube, Linkedin, Twitter, Music, Disc } from 'lucide-react'; // Added generic icons for Podcast/Spotify
 
 const Footer = () => {
-    const mediaLogos = [
-        "THE TIM FERRISS SHOW",
-        "NETFLIX",
-        "FOX BUSINESS",
-        "THE WALL STREET JOURNAL",
-        "CNN",
-        "CNBC",
-        "PBS",
-        "abc NEWS"
-    ];
+
 
     const footerLinks = [
         "About Us",
@@ -26,32 +17,7 @@ const Footer = () => {
 
     return (
         <footer>
-            {/* 1. TOP MEDIA BAR (White) */}
-            <div style={{ backgroundColor: 'white', padding: '4rem 0', borderBottom: '1px solid #eee' }}>
-                <div className="container">
-                    <div className="media-grid" style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        flexWrap: 'wrap',
-                        gap: '2rem',
-                        opacity: 0.4
-                    }}>
-                        {mediaLogos.map((logo, i) => (
-                            <span key={i} style={{
-                                fontSize: '1.2rem',
-                                fontWeight: 900,
-                                fontFamily: 'var(--font-primary)',
-                                textTransform: 'uppercase',
-                                color: '#000',
-                                textAlign: 'center'
-                            }}>
-                                {logo}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            </div>
+
 
             {/* 2. MAIN FOOTER (Black) */}
             <div style={{ backgroundColor: 'black', color: 'white', padding: '5rem 0 3rem' }}>
@@ -134,10 +100,15 @@ const Footer = () => {
                         {/* COLUMN 3: LINKS */}
                         <div style={{ paddingLeft: '2rem' }}>
                             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                {footerLinks.map((link, i) => (
+                                {[
+                                    { name: "About Us", path: "/about" },
+                                    { name: "Podcast", path: "/podcast" },
+                                    { name: "Programs", path: "/#programs" },
+                                    { name: "Contact Us", path: "/contact" }
+                                ].map((link, i) => (
                                     <li key={i}>
-                                        <a href="#" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 500 }}>
-                                            {link}
+                                        <a href={link.path} style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 500 }}>
+                                            {link.name}
                                         </a>
                                     </li>
                                 ))}
@@ -163,7 +134,7 @@ const Footer = () => {
                                 Copyright Digital Yagnesh © {new Date().getFullYear()}
                             </span>
                             <a href="#" style={{ color: '#666', textDecoration: 'none', fontSize: '0.85rem' }}>Disclosure & Terms and Conditions</a>
-                            <span style={{ color: '#666', fontSize: '0.85rem' }}>Built with ❤️ by AntiGravity</span>
+                            <span style={{ color: '#666', fontSize: '0.85rem' }}>Built with ❤️ by himanshu</span>
                         </div>
 
                         {/* Right: Social & Login */}
