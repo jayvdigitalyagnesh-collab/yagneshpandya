@@ -64,17 +64,17 @@ const Hero = () => {
                     <div style={{ maxWidth: '900px' }}>
                         <Reveal>
                             <h1 style={{
-                                fontSize: 'clamp(3.5rem, 6.5vw, 6.5rem)',
+                                fontSize: 'clamp(2.5rem, 4.5vw, 4.5rem)',
                                 fontWeight: 900,
                                 color: 'white',
                                 lineHeight: 0.9,
                                 marginBottom: '2rem',
-                                textTransform: 'uppercase',
-                                letterSpacing: '-2px',
+                                textTransform: 'none',
+                                letterSpacing: '-1px',
                                 textShadow: '0 4px 20px rgba(0,0,0,0.5)'
                             }}>
-                                Your Rich Life<br />
-                                Starts Here
+                                Helping Entrepreneurs<br />
+                                & Businesses Scale
                             </h1>
                         </Reveal>
 
@@ -82,7 +82,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
-                            href="#contact"
+                            href="#programs"
                             className="btn-coral"
                             style={{
                                 fontSize: '1.1rem',
@@ -90,7 +90,7 @@ const Hero = () => {
                                 boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
                                 display: 'inline-block'
                             }}>
-                            Get Coaching From Yagnesh
+                            Explore Programs & Podcast
                         </motion.a>
                     </div>
                 </div>

@@ -73,26 +73,13 @@ const Navbar = () => {
             fontFamily: '"Satisfy", cursive',
             fontSize: '2.2rem',
             color: 'white',
-            fontWeight: 700,
-            lineHeight: 1,
-            marginRight: '12px',
-          }}>
-            YP
-          </span>
-          <span style={{
-            fontFamily: '"Inter", sans-serif',
-            fontSize: '0.75rem',
-            color: 'white',
             textAlign: 'left',
-            lineHeight: 1.2,
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-            borderLeft: '1px solid rgba(255,255,255,0.4)',
-            paddingLeft: '12px',
-            marginLeft: '5px'
+            lineHeight: 1,
+            fontWeight: 400,
+            textTransform: 'none',
+            letterSpacing: '0'
           }}>
-            Yagnesh Pandya<br />Digital Growth
+            Yagnesh Pandya
           </span>
         </NavLink>
 
