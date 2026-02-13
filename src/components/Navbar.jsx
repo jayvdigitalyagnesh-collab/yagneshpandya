@@ -45,11 +45,11 @@ const Navbar = () => {
       borderBottom: isScrolled ? '1px solid #222' : 'none'
     }}>
 
-      {!isScrolled && location.pathname === '/' && (
+      {!isScrolled && (location.pathname === '/' || location.pathname === '/about' || location.pathname === '/podcast' || location.pathname === '/contact') && (
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)',
           zIndex: -1,
           pointerEvents: 'none'
         }} />

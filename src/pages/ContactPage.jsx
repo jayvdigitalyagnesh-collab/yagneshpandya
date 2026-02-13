@@ -14,9 +14,9 @@ const ContactPage = () => {
     };
 
     return (
-        <div className="contact-page" style={{ backgroundColor: '#fff', minHeight: '100vh', paddingTop: '100px' }}>
+        <div className="contact-page" style={{ backgroundColor: '#fff', minHeight: '100vh' }}>
             {/* 1. HERO SECTION */}
-            <section style={{ padding: '6rem 0', backgroundColor: '#000', color: 'white' }}>
+            <section style={{ padding: '12rem 0 8rem', backgroundColor: '#000', color: 'white' }}>
                 <div className="container">
                     <Reveal>
                         <h1 style={{

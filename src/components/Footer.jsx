@@ -101,14 +101,21 @@ const Footer = () => {
                         <div style={{ paddingLeft: '2rem' }}>
                             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                 {[
-                                    { name: "About Us", path: "/about" },
+                                    { name: "About", path: "/about" },
+                                    { name: "Agency", path: "https://www.digitalyagnesh.com/", isExternal: true },
                                     { name: "Podcast", path: "/podcast" },
-                                    { name: "Programs", path: "/#programs" },
-                                    { name: "Contact Us", path: "/contact" }
+                                    { name: "Events", path: "/events" },
+                                    { name: "Coaching", path: "/coaching" },
+                                    { name: "Contact", path: "/contact" }
                                 ].map((link, i) => (
                                     <li key={i}>
-                                        <a href={link.path} style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 500 }}>
-                                            {link.name}
+                                        <a
+                                            href={link.path}
+                                            target={link.isExternal ? "_blank" : "_self"}
+                                            rel={link.isExternal ? "noopener noreferrer" : ""}
+                                            style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 500 }}
+                                        >
+                                            {link.name} {link.isExternal && '↗'}
                                         </a>
                                     </li>
                                 ))}
