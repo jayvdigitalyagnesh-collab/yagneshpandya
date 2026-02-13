@@ -134,28 +134,20 @@ const Footer = () => {
                         flexWrap: 'wrap',
                         gap: '2rem'
                     }} className="footer-bottom">
+                        <span style={{ color: '#666', fontSize: '0.85rem' }}>
+                            Copyright Digital Yagnesh © {new Date().getFullYear()}
+                        </span>
 
-                        {/* Left: Copyright & Links */}
-                        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                            <span style={{ color: '#666', fontSize: '0.85rem' }}>
-                                Copyright Digital Yagnesh © {new Date().getFullYear()}
-                            </span>
-                            <a href="#" style={{ color: '#666', textDecoration: 'none', fontSize: '0.85rem' }}>Disclosure & Terms and Conditions</a>
-                            <span style={{ color: '#666', fontSize: '0.85rem' }}>Built with ❤️ by himanshu</span>
-                        </div>
+                        <a href="#" style={{ color: '#666', textDecoration: 'none', fontSize: '0.85rem' }}>
+                            Disclosure & Terms and Conditions
+                        </a>
 
-                        {/* Right: Social & Login */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <span style={{ color: '#666', fontSize: '0.9rem', marginRight: '0.5rem' }}>Find Us on Social Media:</span>
-                                <a href="#" style={{ color: 'white' }}><Instagram size={20} /></a>
-                                <a href="#" style={{ color: 'white' }}><Twitter size={20} /></a>
-                                <a href="#" style={{ color: 'white' }}><Youtube size={20} /></a>
-                                <a href="#" style={{ color: 'white' }}><Music size={20} /></a>
-                            </div>
-                            <button className="btn-coral" style={{ padding: '0.8rem 1.5rem', fontSize: '0.9rem' }}>
-                                Student Login
-                            </button>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <span style={{ color: '#666', fontSize: '0.9rem', marginRight: '0.5rem' }}>Find Us on Social Media:</span>
+                            <a href="#" style={{ color: 'white' }}><Instagram size={20} /></a>
+                            <a href="#" style={{ color: 'white' }}><Twitter size={20} /></a>
+                            <a href="#" style={{ color: 'white' }}><Youtube size={20} /></a>
+                            <a href="#" style={{ color: 'white' }}><Music size={20} /></a>
                         </div>
                     </div>
                 </div>

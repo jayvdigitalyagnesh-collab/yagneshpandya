@@ -86,26 +86,7 @@ const Podcast = () => {
                             Watch on YouTube <span>↗</span>
                         </a>
 
-                        <a
-                            href="#"
-                            style={{
-                                color: 'white',
-                                textDecoration: 'none',
-                                padding: '1rem 2rem',
-                                border: '1px solid rgba(255,255,255,0.3)',
-                                borderRadius: '4px',
-                                fontWeight: 600,
-                                fontSize: '1rem',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.5rem',
-                                transition: 'background-color 0.2s'
-                            }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                        >
-                            Listen on Spotify
-                        </a>
+
                     </div>
                 </div>
             </div>

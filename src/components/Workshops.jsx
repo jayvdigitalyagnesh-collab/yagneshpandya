@@ -101,12 +101,13 @@ const Workshops = () => {
                     minHeight: '500px'
                 }}>
                     <img
-                        src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1600&q=80"
+                        src="/p3.png"
                         alt="Yagnesh Workshop"
                         style={{
                             width: '100%',
                             height: '100%',
                             objectFit: 'cover',
+                            objectPosition: 'bottom',
                             position: 'absolute',
                             inset: 0
                         }}
