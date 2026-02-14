@@ -8,7 +8,6 @@ import CoachingPage from './pages/CoachingPage';
 import EventsPage from './pages/EventsPage';
 import ContactPage from './pages/ContactPage';
 import Footer from './components/Footer';
-import Banner from './components/Banner';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,8 +22,6 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="App">
-        {/* Global PROMO Banner */}
-        <Banner />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

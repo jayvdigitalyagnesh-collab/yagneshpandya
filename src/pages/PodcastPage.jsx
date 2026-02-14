@@ -1,43 +1,75 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Mic, Headphones, ArrowRight } from 'lucide-react';
-import Contact from '../components/Contact';
+import { Play, Mic, Headphones, ArrowRight, ExternalLink } from 'lucide-react';
 import { Reveal } from '../components/Reveal';
+import YoutubeGrid from '../components/YoutubeGrid';
+
+// --- ⚠️ ACTION REQUIRED: REPLACE THESE WITH YOUR ACTUAL YOUTUBE API CREDENTIALS ⚠️ ---
+// --- YouTube API Configuration ---
+const API_KEY = 'AIzaSyB36ZIGtZtKlzayJzRO-RWnyfsK2l0ptCQ';
+const CHANNEL_ID = 'UCvjj3UnvjzxJytHOmR82sDw';
+// ----------------------------------
 
 const PodcastPage = () => {
+    // Statistically set the most recent video ID
+    const [latestVideoId] = React.useState('UM0BDMwReHk');
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    const episodes = [
-        { title: "Episode 247: 'We're in our 40s — with nothing saved'", date: "Feb 13, 2026", link: "#" },
-        { title: "Episode 246: 'We're drowning in debt, but bought another house'", date: "Feb 06, 2026", link: "#" },
-        { title: "245. We make 6 figures. Why am I hiding fast food purchases?", date: "Jan 30, 2026", link: "#" },
-        { title: "Episode 244: 'I'm in $244k debt but give $500/mo to my church'", date: "Jan 23, 2026", link: "#" }
-    ];
 
     return (
         <div className="podcast-page">
             {/* 1. HERO SECTION */}
             <section style={{
                 position: 'relative',
-                height: '85vh',
+                height: '100vh',
                 minHeight: '600px',
                 display: 'flex',
                 alignItems: 'center',
                 color: 'white',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                backgroundColor: 'black'
             }}>
-                {/* Background Image with Dark Overlay */}
-                <div style={{ position: 'absolute', inset: 0, zIndex: -1 }}>
-                    <img
-                        src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=2600&auto=format&fit=crop"
-                        alt="Podcast Studio"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%) brightness(0.4)' }}
-                    />
+                {/* Background Image Layer */}
+                <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundColor: 'black',
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    overflow: 'hidden'
+                }}>
+                    {/* The Image on the Right - No width cap to show full image naturally */}
+                    <div style={{ height: '100%', position: 'relative' }}>
+                        <img
+                            src="/p4.png"
+                            alt="Yagnesh Session"
+                            style={{
+                                height: '100%',
+                                width: 'auto',
+                                objectFit: 'contain',
+                                filter: 'grayscale(100%) brightness(0.8)'
+                            }}
+                        />
+                        {/* Smooth blend from the left black side into the image */}
+                        <div style={{
+                            position: 'absolute',
+                            inset: 0,
+                            background: 'linear-gradient(to right, black 0%, transparent 20%)'
+                        }}></div>
+                    </div>
+
+                    {/* Overall slight dark overlay for text contrast on the left */}
+                    <div style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%)',
+                        pointerEvents: 'none'
+                    }}></div>
                 </div>
 
-                <div className="container" style={{ position: 'relative', zIndex: 2, paddingBottom: '3rem' }}>
+                <div className="container" style={{ position: 'relative', zIndex: 2, paddingTop: '6rem', paddingBottom: '3rem' }}>
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -102,7 +134,7 @@ const PodcastPage = () => {
 
             {/* 2. LATEST EPISODE */}
             <section style={{ padding: 'var(--section-padding)', backgroundColor: 'white' }}>
-                <div className="container">
+                <div className="container" id="episodes">
                     <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
                         <Reveal>
                             <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 0 }}>THE LATEST EPISODE</h2>
@@ -110,7 +142,7 @@ const PodcastPage = () => {
                     </div>
                     <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden' }}>
                         <iframe
-                            src="https://www.youtube.com/embed/sURQUtze_z8"
+                            src={`https://www.youtube.com/embed/${latestVideoId}`}
                             style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                             allowFullScreen
                             title="Latest Episode"
@@ -119,61 +151,18 @@ const PodcastPage = () => {
                 </div>
             </section>
 
-            {/* 3. ALL EPISODES GRID - VIDEO GALLERY */}
-            <section style={{ padding: '6rem 0', backgroundColor: '#F9F9F9' }}>
-                <div className="container">
-                    <div style={{ textAlign: 'left', marginBottom: '3rem' }}>
-                        <Reveal>
-                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 0 }}>ALL PODCAST EPISODES</h2>
-                        </Reveal>
-                    </div>
-                    <div className="grid-2" style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', // Responsive grid
-                        gap: '2rem'
-                    }}>
-                        {[
-                            "FVQVq-91594",
-                            "sURQUtze_z8",
-                            "xFsmMfyMnoo",
-                            "SKkwFbBDMBU",
-                            "j9MGFILl50k",
-                            "2flgQ6F9Zcg"
-                        ].map((videoId, i) => (
-                            <div key={i} style={{
-                                backgroundColor: 'white',
-                                border: '1px solid #eee',
-                                borderRadius: '8px',
-                                overflow: 'hidden',
-                                boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
-                            }}>
-                                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, backgroundColor: '#000' }}>
-                                    <iframe
-                                        src={`https://www.youtube.com/embed/${videoId}`}
-                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
-                                        allowFullScreen
-                                        title={`Podcast Episode ${i + 1}`}
-                                    />
-                                </div>
-                                <div style={{ padding: '1.5rem' }}>
-                                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem' }}>Episode {i + 1}</h3>
-                                    <a href={`https://youtu.be/${videoId}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-coral)', fontWeight: 600, fontSize: '0.9rem' }}>
-                                        Watch on YouTube ↗
-                                    </a>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-                        <button className="btn-coral">View More Videos</button>
-                    </div>
-                </div>
-            </section>
+            {/* 3. ALL EPISODES GRID - DYNAMIC */}
+            <YoutubeGrid title="All Podcast Episodes" maxResults={12} useEmbeds={true} />
 
             {/* 4. APPLY SECTION - REFACTORED TO MATCH USER SCREENSHOT */}
             <section style={{ padding: '6rem 0', backgroundColor: 'white' }}>
                 <div className="container">
-                    <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+                    <div className="responsive-grid" style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gap: '5rem',
+                        alignItems: 'center'
+                    }}>
                         {/* Left: Studio Image with Grey Background */}
                         <div style={{ backgroundColor: '#F0F0F0', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', height: '100%', minHeight: '500px' }}>
                             <img

@@ -2,8 +2,8 @@
 
 :root {
   /* Updated IWTYTBR Palette */
-  --color-coral: #FF3B30;
-  /* Brighter, more reddish-orange */
+  --color-coral: #C5A059;
+  /* Luxe Gold */
   --bg-white: #FFFFFF;
   --bg-dark: #121212;
   /* Darker black */
@@ -152,4 +152,30 @@ section {
   .container {
     padding: 0 1.5rem;
   }
+}
+
+/* Navbar Link Animation */
+.nav-link-anim {
+  position: relative;
+  display: inline-block;
+  padding: 4px 0;
+}
+
+.nav-link-anim::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-coral);
+  transition: width 0.3s ease-out;
+}
+
+.nav-link-anim:hover::after {
+  width: 100%;
+}
+
+.nav-link-anim.active::after {
+  width: 100%;
 }

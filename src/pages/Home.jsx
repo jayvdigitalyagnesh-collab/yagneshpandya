@@ -16,7 +16,7 @@ const Home = () => {
             <Programs />
             <Workshops />
             <Podcast />
-            <YoutubeGrid />
+            <YoutubeGrid title="Talk With Yagnesh On YouTube" maxResults={12} />
             <Testimonials />
             <Contact />
         </div>

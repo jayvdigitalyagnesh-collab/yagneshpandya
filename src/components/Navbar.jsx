@@ -35,7 +35,7 @@ const Navbar = () => {
     <nav style={{
       position: 'fixed',
       // Banner is now global, so we always offset by approx banner height (46px) initially
-      top: isScrolled ? '0' : '46px',
+      top: 0,
       left: 0,
       right: 0,
       zIndex: 1000,
@@ -44,16 +44,6 @@ const Navbar = () => {
       transition: 'all 0.3s ease-out',
       borderBottom: isScrolled ? '1px solid #222' : 'none'
     }}>
-
-      {!isScrolled && (location.pathname === '/' || location.pathname === '/about' || location.pathname === '/podcast' || location.pathname === '/contact') && (
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)',
-          zIndex: -1,
-          pointerEvents: 'none'
-        }} />
-      )}
 
       <div className="container" style={{
         display: 'flex',
@@ -85,6 +75,7 @@ const Navbar = () => {
                 href={link.path}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="nav-link-anim"
                 style={{
                   color: 'white',
                   textDecoration: 'none',
@@ -94,8 +85,6 @@ const Navbar = () => {
                   opacity: 0.9,
                   transition: 'all 0.2s ease',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-coral)'; e.currentTarget.style.opacity = 1; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'white'; e.currentTarget.style.opacity = 0.9; }}
               >
                 {link.name} ↗
               </a>
@@ -105,6 +94,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.path}
+                  className="nav-link-anim"
                   style={{
                     color: 'white',
                     textDecoration: 'none',
@@ -114,8 +104,6 @@ const Navbar = () => {
                     opacity: 0.9,
                     transition: 'all 0.2s ease',
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-coral)'; e.currentTarget.style.opacity = 1; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = 'white'; e.currentTarget.style.opacity = 0.9; }}
                 >
                   {link.name}
                 </a>
@@ -124,6 +112,7 @@ const Navbar = () => {
                 <NavLink
                   key={link.name}
                   to={link.path}
+                  className={({ isActive }) => isActive ? "nav-link-anim active" : "nav-link-anim"}
                   style={({ isActive }) => ({
                     color: isActive ? 'var(--color-coral)' : 'white',
                     textDecoration: 'none',
