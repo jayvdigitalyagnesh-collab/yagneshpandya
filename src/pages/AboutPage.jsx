@@ -47,7 +47,7 @@ const AboutPage = () => {
                         </div>
                         <div style={{ position: 'relative' }}>
                             <img
-                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200"
+                                src="/slider/10.png"
                                 alt="Early Days"
                                 style={{ width: '100%', borderRadius: '4px', boxShadow: '20px 20px 0 #f0f0f0' }}
                             />
@@ -68,9 +68,9 @@ const AboutPage = () => {
                     </div>
                     <div className="grid-3">
                         {[
-                            { title: "Time Freedom", img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800", desc: "Wake up when you want." },
-                            { title: "Global Impact", img: "https://images.unsplash.com/photo-1526304640152-d4619684e484?w=800", desc: "Build a brand that matters." },
-                            { title: "Generational Wealth", img: "https://images.unsplash.com/photo-1565514020176-dbf2277478d3?w=800", desc: "Secure your family's future." }
+                            { title: "Time Freedom", img: "/slider/11.png", desc: "Wake up when you want." },
+                            { title: "Global Impact", img: "/slider/12.png", desc: "Build a brand that matters." },
+                            { title: "Generational Wealth", img: "/slider/13.png", desc: "Secure your family's future." }
                         ].map((card, i) => (
                             <div key={i} style={{ position: 'relative', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
                                 <img src={card.img} alt={card.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -106,7 +106,7 @@ const AboutPage = () => {
                         </div>
                         <div>
                             <img
-                                src="/p1.png"
+                                src="/slider/14.png"
                                 alt="Yagnesh Meeting"
                                 style={{ width: '100%', borderRadius: '8px' }}
                             />
@@ -120,7 +120,7 @@ const AboutPage = () => {
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
                         <img
-                            src="/p1.png"
+                            src="/slider/15.png"
                             alt="Yagnesh Portrait"
                             style={{ width: '100%', borderRadius: '8px', filter: 'grayscale(100%)' }}
                         />
@@ -163,7 +163,7 @@ const AboutPage = () => {
                         </div>
                         <div style={{ order: 1 }}>
                             <img
-                                src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1000"
+                                src="/slider/16.png"
                                 alt="Programs"
                                 style={{ width: '100%', transform: 'rotate(-2deg)', boxShadow: '0 20px 50px rgba(0,0,0,0.1)' }}
                             />
@@ -175,7 +175,7 @@ const AboutPage = () => {
             {/* 8. PODCAST DARK SECTION */}
             <section style={{ padding: 'var(--section-padding)', backgroundColor: 'black', color: 'white', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
-                    <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1600" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src="/slider/17.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                     <div style={{ maxWidth: '600px' }}>

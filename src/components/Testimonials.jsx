@@ -5,22 +5,22 @@ import { Reveal } from './Reveal';
 const Testimonials = () => {
     const testimonials = [
         {
-            quote: "When we were dating, we almost always did low budget stuff because we were typical college broke students. Telling my wife to go out in our hometown without worrying about money was a truly special moment.",
-            author: "Juan Pablo Beltran",
-            label: "CLIENT",
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop"
+            quote: "Yagnesh's Digital Growth strategy completely transformed my real estate business in Ahmedabad. We saw a 3x increase in qualified leads within just 4 months of implementing his systems.",
+            author: "Arjun Mehta",
+            label: "FOUNDER, MEHTA REALTY",
+            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
         },
         {
-            quote: "I went from having 20k in debt with 0 savings to debt-free, 120k in savings, automated investing, and having the ability to invest in a female-owned company called Blender Bombs that I've long admired.",
-            author: "Alex Vriesman",
-            label: "CLIENT",
+            quote: "The Business Mastery workshop was a turning point. As a creator, I was struggling to scale, but Yagnesh showed me how to build a team and automate my sales funnel effectively.",
+            author: "Priya Sharma",
+            label: "E-COMMERCE ENTREPRENEUR",
             image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
         },
         {
-            quote: "We stayed in a luxurious Airbnb estate in Cape Town with ocean AND mountain views, then stayed at a luxury resort for the safari... Best trip of our lives so far, and we're planning to go back in a few years!",
-            author: "Katie Mild",
-            label: "CLIENT",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop"
+            quote: "I've followed many gurus, but Yagnesh's approach to psychological marketing is different. It's practical, rooted in Indian market dynamics, and most importantly—it actually works.",
+            author: "Rohan Deshmukh",
+            label: "DIGITAL STRATEGIST",
+            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop"
         }
     ];
 

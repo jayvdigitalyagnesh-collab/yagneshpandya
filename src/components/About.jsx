@@ -90,7 +90,7 @@ const About = () => {
                         backgroundColor: '#000' // Placeholder bg color if image loads slow
                     }}>
                         <img
-                            src="/p1.png"
+                            src="/slider/1.png"
                             alt="Yagnesh Pandya"
                             style={{
                                 width: '100%',

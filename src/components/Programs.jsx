@@ -2,82 +2,136 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Reveal } from './Reveal';
 
+import { ArrowUpRight, ShieldCheck, Zap } from 'lucide-react';
+
 const Programs = () => {
     const programs = [
         {
             title: 'Digital Yagnesh',
-            description: 'Premium digital marketing, branding, and web development for high-growth companies.',
+            tagline: 'STRATEGY & GROWTH',
+            description: 'Premium digital marketing, branding, and web development for high-growth companies looking to dominate their market.',
             image: '/dy.png',
-            link: 'https://www.digitalyagnesh.com/'
+            link: 'https://www.digitalyagnesh.com/',
+            icon: <Zap size={20} />
         },
         {
             title: 'Talk With Yagnesh',
-            description: 'Deep-dive conversations with entrepreneurs and innovators. Real stories, actionable insights.',
+            tagline: 'AUTHORITY & MEDIA',
+            description: 'Deep-dive conversations with global entrepreneurs. Scaling your authority through cinematic podcasting and storytelling.',
             image: '/podcast.png',
-            link: 'https://www.youtube.com/@talkwithyagnesh'
+            link: 'https://www.youtube.com/@talkwithyagnesh',
+            icon: <ShieldCheck size={20} />
         }
     ];
 
     return (
-        <section id="programs" style={{ backgroundColor: 'white', padding: 'var(--section-padding)' }}>
-            <div className="container">
+        <section id="programs" style={{
+            backgroundColor: '#ffffff',
+            padding: '10rem 0',
+            position: 'relative',
+            overflow: 'hidden'
+        }}>
+            {/* Subtle Design Element */}
+            <div style={{
+                position: 'absolute',
+                top: '0',
+                right: '0',
+                width: '40vw',
+                height: '40vw',
+                background: 'radial-gradient(circle, rgba(197, 160, 89, 0.03) 0%, transparent 70%)',
+                zIndex: 0
+            }} />
 
-                {/* Header - Now Left Aligned for Consistency */}
-                <div style={{ marginBottom: '4rem', maxWidth: '800px' }}>
-                    <span style={{
-                        display: 'block',
-                        fontWeight: 800,
-                        letterSpacing: '2px',
-                        color: '#AAA',
-                        marginBottom: '1rem',
-                        textTransform: 'uppercase',
-                        fontSize: '0.9rem'
-                    }}>
-                        Programs & Products
-                    </span>
-                    <Reveal>
-                        <h2 style={{
-                            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                            fontWeight: 900,
+            <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+
+                {/* Section Header */}
+                <div style={{ marginBottom: '6rem', maxWidth: '900px' }}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <span style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.8rem',
+                            fontWeight: 700,
+                            letterSpacing: '0.2rem',
+                            color: 'var(--color-coral)',
+                            marginBottom: '1.5rem',
                             textTransform: 'uppercase',
-                            lineHeight: 1,
-                            marginBottom: '1rem'
+                            fontSize: '0.85rem'
                         }}>
-                            Step-By-Step Programs For<br />
-                            Creating Your <span style={{ color: 'var(--color-coral)' }}>Rich Life</span>
-                        </h2>
-                    </Reveal>
-                    <p style={{
-                        fontSize: '1.2rem',
-                        color: 'var(--text-gray)',
-                        maxWidth: '600px',
-                        lineHeight: 1.6
-                    }}>
-                        Word-for-word scripts and exact tactics, all rigorously tested by thousands of clients.
-                    </p>
+                            {/* <span style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-coral)' }}></span> */}
+                            {/* Elite Ecosystem */}
+                        </span>
+
+                        <Reveal>
+                            <h2 style={{
+                                fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+                                fontWeight: 900,
+                                textTransform: 'uppercase',
+                                lineHeight: 0.9,
+                                letterSpacing: '-0.03em',
+                                marginBottom: '2rem'
+                            }}>
+                                Step-By-Step <br /> Programs For A <br />
+                                <span style={{
+                                    color: 'transparent',
+                                    WebkitTextStroke: '1px #000',
+                                    fontWeight: 900
+                                }}>RICH LIFE</span>
+                            </h2>
+                        </Reveal>
+
+                        <p style={{
+                            fontSize: '1.3rem',
+                            color: '#555',
+                            maxWidth: '550px',
+                            lineHeight: 1.6,
+                            fontWeight: 400
+                        }}>
+                            Battle-tested strategies, word-for-word scripts, and the exact roadmap used by 7+ figure entrepreneurs.
+                        </p>
+                    </motion.div>
                 </div>
 
-                <div className="grid-2">
+                {/* Creative Large Cards */}
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '4rem'
+                }}>
                     {programs.map((program, idx) => (
                         <motion.div
                             key={idx}
-                            whileHover={{ y: -8 }}
-                            className="card"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: idx * 0.2 }}
                             style={{
-                                backgroundColor: 'white',
+                                display: 'grid',
+                                gridTemplateColumns: idx % 2 === 0 ? '1.2fr 1fr' : '1fr 1.2fr',
+                                gap: '0',
+                                backgroundColor: '#fff',
+                                borderRadius: '32px',
                                 overflow: 'hidden',
-                                borderRadius: '8px', // Slightly rounded
-                                boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-                                border: '1px solid #eee'
+                                boxShadow: '0 30px 100px rgba(0,0,0,0.06)',
+                                border: '1px solid #f0f0f0'
                             }}
+                            className="program-creative-card"
                         >
+                            {/* Image Part */}
                             <div style={{
-                                width: '100%',
-                                height: '350px', // Taller image for impact
+                                order: idx % 2 === 0 ? 1 : 2,
+                                height: '500px',
                                 overflow: 'hidden',
-                                backgroundColor: '#f0f0f0'
+                                position: 'relative'
                             }}>
-                                <img
+                                <motion.img
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 1.2, ease: [0.33, 1, 0.68, 1] }}
                                     src={program.image}
                                     alt={program.title}
                                     style={{
@@ -86,47 +140,92 @@ const Programs = () => {
                                         objectFit: 'cover'
                                     }}
                                 />
+                                <div style={{
+                                    position: 'absolute',
+                                    inset: 0,
+                                    background: 'linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 60%)'
+                                }} />
                             </div>
 
-                            <div style={{ padding: '2.5rem' }}>
-                                <h3 style={{
-                                    fontSize: '2rem',
+                            {/* Content Part */}
+                            <div style={{
+                                order: idx % 2 === 0 ? 2 : 1,
+                                padding: '5rem',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                backgroundColor: '#fff'
+                            }}>
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.8rem',
+                                    color: 'var(--color-coral)',
                                     marginBottom: '1rem',
                                     fontWeight: 800,
+                                    fontSize: '0.9rem',
+                                    letterSpacing: '0.1rem'
+                                }}>
+                                    {program.icon}
+                                    {program.tagline}
+                                </div>
+
+                                <h3 style={{
+                                    fontSize: '3.5rem',
+                                    marginBottom: '1.5rem',
+                                    fontWeight: 900,
                                     textTransform: 'uppercase',
-                                    lineHeight: 1
+                                    lineHeight: 1,
+                                    letterSpacing: '-0.02em'
                                 }}>
                                     {program.title}
                                 </h3>
+
                                 <p style={{
-                                    color: 'var(--text-gray)',
-                                    marginBottom: '2rem',
-                                    lineHeight: '1.7',
-                                    fontSize: '1.05rem'
+                                    color: '#666',
+                                    marginBottom: '3rem',
+                                    lineHeight: '1.8',
+                                    fontSize: '1.15rem',
+                                    maxWidth: '400px'
                                 }}>
                                     {program.description}
                                 </p>
-                                <a
+
+                                <motion.a
                                     href={program.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    whileHover={{ gap: '1.5rem' }}
                                     style={{
-                                        color: 'var(--color-coral)',
-                                        textDecoration: 'none',
-                                        fontWeight: 700,
-                                        fontSize: '1rem',
-                                        display: 'flex',
+                                        display: 'inline-flex',
                                         alignItems: 'center',
-                                        gap: '0.5rem'
+                                        gap: '1rem',
+                                        color: '#000',
+                                        textDecoration: 'none',
+                                        fontWeight: 800,
+                                        fontSize: '1rem',
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.05rem'
                                     }}
                                 >
-                                    Get Started →
-                                </a>
+                                    Explore  <ArrowUpRight size={20} color="var(--color-coral)" strokeWidth={3} />
+                                </motion.a>
                             </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
+
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                @media (max-width: 1024px) {
+                    .program-creative-card {
+                        grid-template-columns: 1fr !important;
+                    }
+                    .program-creative-card > div:first-child { order: 1 !important; height: 350px !important; }
+                    .program-creative-card > div:last-child { order: 2 !important; padding: 3rem 2rem !important; }
+                }
+            `}} />
         </section>
     );
 };

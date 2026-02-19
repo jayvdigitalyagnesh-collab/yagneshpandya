@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import PodcastPage from './pages/PodcastPage';
-import CoachingPage from './pages/CoachingPage';
 import EventsPage from './pages/EventsPage';
 import ContactPage from './pages/ContactPage';
 import Footer from './components/Footer';
@@ -27,7 +26,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/podcast" element={<PodcastPage />} />
-          <Route path="/coaching" element={<CoachingPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<Home />} />

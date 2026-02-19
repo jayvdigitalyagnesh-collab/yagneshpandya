@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Play, Mic, Headphones, ArrowRight, ExternalLink } from 'lucide-react';
 import { Reveal } from '../components/Reveal';
@@ -166,7 +167,7 @@ const PodcastPage = () => {
                         {/* Left: Studio Image with Grey Background */}
                         <div style={{ backgroundColor: '#F0F0F0', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', height: '100%', minHeight: '500px' }}>
                             <img
-                                src="/p1.png"
+                                src="/event/WhatsApp Image 2026-02-19 at 4.37.16 PM.jpeg"
                                 alt="Yagnesh Portrait"
                                 style={{ width: '85%', height: 'auto', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
                             />
@@ -187,15 +188,16 @@ const PodcastPage = () => {
                                 </h2>
                             </Reveal>
                             {/* Minimalist Button */}
-                            <a href="#apply" className="btn-coral" style={{
+                            <Link to="/contact" className="btn-coral" style={{
                                 padding: '1.2rem 3rem',
                                 fontSize: '1.1rem',
                                 borderRadius: '4px',
                                 fontWeight: 700,
-                                display: 'inline-block'
+                                display: 'inline-block',
+                                textDecoration: 'none'
                             }}>
                                 Apply Here!
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

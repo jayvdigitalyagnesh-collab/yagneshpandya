@@ -1,257 +1,205 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
-import Contact from '../components/Contact';
 
 const EventsPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
- 
-    const events = [
-        {
-            date: "FEB 11",
-            title: "RICH LIFE EXPERT SESSIONS: HOW TO BUILD YOUR MONEY HABITS",
-            guest: "WITH MIKE MICHALOWICZ",
-            description: "Mike Michalowicz is the author of Profit First, Clockwork, and other best-selling books. He joins us to break down how to automate your finances.",
-            image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
-            category: "Expert Session",
-            btn: "Register Now"
-        },
-        {
-            date: "FEB 12",
-            title: "WEEKLY MONEY REVIEW",
-            guest: "",
-            description: "Join us for a dedicated hour to review your numbers. Bring your questions and let's get you back on track with your CSP.",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-            category: "Weekly Money Review",
-            btn: "Add to Calendar"
-        },
-        {
-            date: "FEB 17",
-            title: "NEW MEMBER ONBOARDING",
-            guest: "",
-            description: "New to Money Coaching? Start here! We'll cover everything you need to know to get the most out of your program membership.",
-            image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
-            category: "New Member Onboarding",
-            btn: "Add to Calendar"
-        },
-        {
-            date: "FEB 17",
-            title: "RICH LIFE EXPERT SESSIONS: THE SCIENCE OF GETTING BACK ON TRACK",
-            guest: "WITH STEVE KAMB",
-            description: "Steve Kamb is the founder of NerdFitness. We'll talk about the psychology of habit formation and how to get back on track when you slip up.",
-            image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
-            category: "Expert Session",
-            btn: "Register Now"
-        }
-    ];
 
-    const pastEvents = [
-        "How To Plan A Wedding Without Going Broke",
-        "The 5 Numbers You Need To Know Before Buying A House",
-        "Investing 101: How To Start From Scratch",
-        "How To Negotiate Your Salary (And Get A $10k Raise)",
-        "Love & Money: How To Talk To Your Partner About Finances",
-        "Travel Hacking: Fly Business Class For Economy Prices",
-        "The Psychology Of Spendiing: Why We Buy Things We Don't Need",
-        "Retirement Planning For Millennials",
-        "How To Start A Side Hustle With $0",
-        "Paying Off Student Loans Fast",
-        "The Ultimate Guide To Credit Cards",
-        "Cryptocurrency: Scam Or Future?",
-        "Real Estate Investing For Beginners"
+    const eventMedia = [
+        { type: 'video', src: '/event/WhatsApp Video 2026-02-19 at 4.22.31 PM.mp4' },
+        { type: 'video', src: '/event/WhatsApp Video 2026-02-19 at 4.23.56 PM.mp4' },
+        { type: 'image', src: '/event/WhatsApp Image 2026-02-19 at 4.30.47 PM.jpeg' },
+        { type: 'video', src: '/event/WhatsApp Video 2026-02-19 at 4.28.34 PM.mp4' },
+        { type: 'image', src: '/event/WhatsApp Image 2026-02-19 at 4.31.15 PM.jpeg' },
+        { type: 'video', src: '/event/WhatsApp Video 2026-02-19 at 4.29.09 PM.mp4' },
+        { type: 'image', src: '/event/WhatsApp Image 2026-02-19 at 4.32.16 PM.jpeg' },
+        { type: 'video', src: '/event/WhatsApp Video 2026-02-19 at 4.29.43 PM.mp4' },
+        { type: 'image', src: '/event/WhatsApp Image 2026-02-19 at 4.33.11 PM.jpeg' },
+        { type: 'video', src: '/event/WhatsApp Video 2026-02-19 at 4.30.21 PM.mp4' },
+        { type: 'image', src: '/event/WhatsApp Image 2026-02-19 at 4.34.32 PM.jpeg' },
+        { type: 'video', src: '/event/WhatsApp Video 2026-02-19 at 4.36.43 PM.mp4' },
+        { type: 'image', src: '/event/WhatsApp Image 2026-02-19 at 4.35.03 PM (1).jpeg' },
+        { type: 'image', src: '/event/WhatsApp Image 2026-02-19 at 4.35.03 PM.jpeg' },
     ];
 
     return (
-        <div className="events-page">
+        <div className="events-page" style={{ backgroundColor: '#000', color: '#fff', minHeight: '100vh' }}>
 
             {/* 1. HERO SECTION */}
-            <section style={{
-                height: '60vh',
-                minHeight: '400px',
-                backgroundImage: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2600&auto=format&fit=crop)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
+            <section className="events-hero" style={{
+                height: '100vh',
+                minHeight: '600px',
+                position: 'relative',
                 display: 'flex',
                 alignItems: 'flex-end',
-                paddingBottom: '4rem'
+                paddingBottom: '8rem',
+                overflow: 'hidden',
+                backgroundColor: '#000'
             }}>
-                <div className="container">
+                <div className="hero-video-container" style={{
+                    position: 'absolute',
+                    inset: 0,
+                    zIndex: 0,
+                    opacity: 0.8 // Brighter than the original 0.6, but maintains premium depth
+                }}>
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        src="/event/YAGNESHBAHI_REEL.mp4"
+                    />
+                    {/* Dark gradient for white text contrast */}
+                    <div style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.8) 100%)'
+                    }}></div>
+                </div>
+
+                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                     <Reveal>
                         <h1 style={{
-                            fontSize: 'clamp(4rem, 10vw, 8rem)',
-                            color: 'white',
+                            fontSize: 'clamp(2.5rem, 8vw, 5rem)',
                             fontWeight: 900,
                             letterSpacing: '-2px',
                             lineHeight: 1,
-                            textTransform: 'uppercase'
+                            textTransform: 'uppercase',
+                            margin: 0,
+                            color: '#fff'
                         }}>
                             Events
                         </h1>
                     </Reveal>
+                    <Reveal delay={0.2}>
+                        <p style={{
+                            fontSize: '1.25rem',
+                            maxWidth: '600px',
+                            marginTop: '1.5rem',
+                            opacity: 1,
+                            lineHeight: 1.4,
+                            fontWeight: 500,
+                            color: '#fff'
+                        }}>
+                            Scaling businesses and transforming lives across the globe.
+                        </p>
+                    </Reveal>
                 </div>
             </section>
 
-            {/* 2. EVENTS LIST */}
-            <section style={{ padding: '6rem 0', backgroundColor: 'white' }}>
+            {/* 2. MEDIA GALLERY SECTION */}
+            <section style={{ padding: '8rem 0', backgroundColor: '#fff' }}>
                 <div className="container">
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
-                        {events.map((evt, i) => (
-                            <div key={i} className="event-row" style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'minmax(300px, 40%) 1fr',
-                                gap: '4rem',
-                                alignItems: 'center'
-                            }}>
-                                {/* Image Card */}
-                                <div style={{
-                                    backgroundColor: '#F3EFEA', // Beige bg from screenshot
-                                    padding: '1.5rem',
-                                    borderRadius: '4px'
-                                }}>
-                                    <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '2px' }}>
-                                        <img
-                                            src={evt.image}
-                                            alt={evt.title}
-                                            style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }}
-                                        />
-                                        {/* Overlay styled like the card in screenshot */}
-                                        <div style={{
-                                            position: 'absolute',
-                                            bottom: 0,
-                                            left: 0,
-                                            right: 0,
-                                            backgroundColor: 'rgba(255,255,255,0.9)',
-                                            padding: '1rem'
-                                        }}>
-                                            <p style={{
-                                                fontSize: '0.8rem',
-                                                fontWeight: 800,
-                                                textTransform: 'uppercase',
-                                                marginBottom: '0.2rem',
-                                                fontFamily: 'sans-serif'
-                                            }}>
-                                                {evt.category}
-                                            </p>
-                                            <p style={{
-                                                fontSize: '1rem',
-                                                fontWeight: 900,
-                                                color: 'var(--color-coral)',
-                                                lineHeight: 1.2
-                                            }}>
-                                                {evt.title.split(':')[1] || evt.title}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <Reveal>
+                        <h2 style={{
+                            fontSize: '3rem',
+                            fontWeight: 800,
+                            textTransform: 'uppercase',
+                            marginBottom: '4rem',
+                            textAlign: 'center',
+                            color: '#000'
+                        }}>
+                            Moments into Memories
+                        </h2>
+                    </Reveal>
 
-                                {/* Text Content */}
-                                <div>
-                                    <Reveal>
-                                        <h2 style={{
-                                            fontSize: '2.5rem',
-                                            fontWeight: 900,
-                                            textTransform: 'uppercase',
-                                            marginBottom: '1.5rem',
-                                            lineHeight: 1,
-                                            color: 'black'
-                                        }}>
-                                            {evt.date} – {evt.title} <br />
-                                            <span style={{ color: '#555' }}>{evt.guest}</span>
-                                        </h2>
-                                    </Reveal>
-                                    <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '2rem', lineHeight: 1.6, maxWidth: '600px' }}>
-                                        {evt.description}
-                                    </p>
-                                    <button className="btn-coral" style={{
-                                        padding: '1rem 2.5rem',
-                                        fontWeight: 700,
-                                        textTransform: 'uppercase',
-                                        fontSize: '0.9rem',
-                                        letterSpacing: '0.5px'
-                                    }}>
-                                        {evt.btn}
-                                    </button>
-                                </div>
-                            </div>
+                    <div className="media-masonry" style={{
+                        columns: '3 300px',
+                        columnGap: '24px',
+                        width: '100%'
+                    }}>
+                        {eventMedia.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                style={{
+                                    breakInside: 'avoid',
+                                    marginBottom: '24px',
+                                    position: 'relative',
+                                    overflow: 'hidden',
+                                    borderRadius: '16px',
+                                    border: '1px solid #f0f0f0',
+                                    backgroundColor: '#fff',
+                                    boxShadow: '0 10px 40px rgba(0,0,0,0.05)',
+                                    display: 'block'
+                                }}
+                            >
+                                {item.type === 'video' ? (
+                                    <video
+                                        src={item.src}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                                    />
+                                ) : (
+                                    <img
+                                        src={item.src}
+                                        alt={`Event ${index}`}
+                                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                                    />
+                                )}
+                            </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* 3. JOIN COACHING / PAST EVENTS */}
-            <section style={{ padding: '6rem 0', backgroundColor: '#F9F9F9', borderTop: '1px solid #eee' }}>
-                <div className="container">
-                    <div className="join-grid" style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
-                        gap: '5rem',
-                        alignItems: 'start'
-                    }}>
-                        {/* Left: Content */}
-                        <div>
-                            <Reveal>
-                                <h2 style={{
-                                    fontSize: 'clamp(3rem, 5vw, 4rem)',
-                                    fontWeight: 900,
-                                    textTransform: 'uppercase',
-                                    marginBottom: '2rem',
-                                    lineHeight: 0.95
-                                }}>
-                                    Join Money Coaching <br />
-                                    And Get All Past <br />
-                                    Events
-                                </h2>
-                            </Reveal>
-                            <p style={{ fontSize: '1.2rem', fontWeight: 600, marginBottom: '2rem' }}>
-                                Get instant access to 40+ on-demand trainings inside Money Coaching with Yagnesh Pandya, including:
-                            </p>
-
-                            <ul style={{
-                                listStyle: 'none',
-                                padding: 0,
-                                display: 'grid',
-                                gridTemplateColumns: '1fr',
-                                gap: '0.8rem',
-                                marginBottom: '2.5rem'
-                            }}>
-                                {pastEvents.map((topic, i) => (
-                                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', fontSize: '1rem', color: '#555' }}>
-                                        <span style={{ color: 'var(--color-coral)', fontWeight: 900 }}>+</span>
-                                        {topic}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <button className="btn-coral" style={{ padding: '1.2rem 3rem', fontSize: '1.1rem', width: '100%' }}>
-                                Join Money Coaching Now
-                            </button>
+            {/* 3. CTA SECTION */}
+            <section style={{
+                padding: '10rem 0',
+                textAlign: 'center',
+                backgroundColor: '#0a0a0a'
+            }}>
+                <div className="container" style={{ maxWidth: '800px' }}>
+                    <Reveal width="100%">
+                        <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 900, marginBottom: '2rem', textTransform: 'uppercase', color: '#fff' }}>
+                            Want us at your next event?
+                        </h2>
+                    </Reveal>
+                    <Reveal width="100%" delay={0.2}>
+                        <p style={{ fontSize: '1.2rem', opacity: 0.7, marginBottom: '4rem', color: '#ccc' }}>
+                            Book Yagnesh Pandya for keynotes, workshops, or business scaling sessions.
+                        </p>
+                    </Reveal>
+                    <Reveal width="100%" delay={0.4}>
+                        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
+                            <a href="/contact" className="btn-coral" style={{
+                                padding: '1.5rem 4rem',
+                                fontSize: '1.2rem',
+                                borderRadius: '50px',
+                                fontWeight: 700,
+                                textDecoration: 'none',
+                                transition: 'transform 0.3s ease'
+                            }}
+                                onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+                                onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                            >
+                                Get in Touch
+                            </a>
                         </div>
-
-                        {/* Right: Image */}
-                        <div style={{ height: '100%', minHeight: '600px', position: 'relative' }}>
-                            <img
-                                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop"
-                                alt="Yagnesh Working"
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover',
-                                    borderRadius: '4px',
-                                    boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
-                                }}
-                            />
-                        </div>
-                    </div>
+                    </Reveal>
                 </div>
             </section>
 
             <style dangerouslySetInnerHTML={{
                 __html: `
+                .media-grid::-webkit-scrollbar { display: none; }
                 @media (max-width: 900px) {
-                    .event-row { grid-template-columns: 1fr !important; gap: 2rem !important; }
-                    .join-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+                    .events-hero { height: auto !important; min-height: 100vh !important; padding: 12rem 0 4rem !important; flex-direction: column !important; justify-content: flex-start !important; }
+                    .hero-video-container { position: relative !important; order: 2 !important; width: 100% !important; justify-content: center !important; padding: 2rem 0 !important; }
+                    .hero-video-box { width: 90% !important; height: 600px !important; }
+                }
+                @media (max-width: 768px) {
+                    .media-grid { grid-template-columns: 1fr !important; grid-auto-rows: auto !important; }
+                    .media-grid > div { height: 177.7vw !important; max-height: 700px !important; }
                 }
             `}} />
         </div>

@@ -98,7 +98,6 @@ const Footer = () => {
                                     { name: "Agency", path: "https://www.digitalyagnesh.com/", isExternal: true },
                                     { name: "Podcast", path: "/podcast" },
                                     { name: "Events", path: "/events" },
-                                    { name: "Coaching", path: "/coaching" },
                                     { name: "Contact", path: "/contact" }
                                 ].map((link, i) => (
                                     <li key={i}>

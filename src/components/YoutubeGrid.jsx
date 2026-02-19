@@ -92,125 +92,50 @@ const YoutubeGrid = ({ title, maxResults = 6, showHeader = true, useEmbeds = fal
                 )}
 
                 {loading ? (
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
                         {[1, 2, 3].map(i => (
-                            <div key={i} style={{ aspectRatio: '16/9', backgroundColor: '#111', borderRadius: '12px', animation: 'pulse 1.5s infinite ease-in-out' }} />
+                            <div key={i} style={{ aspectRatio: '16/9', backgroundColor: '#181818', borderRadius: '12px', animation: 'pulse 1.5s infinite ease-in-out' }} />
                         ))}
                     </div>
                 ) : error ? (
                     <p style={{ color: '#666', textAlign: 'center' }}>{error}</p>
                 ) : (
-                    <div className="grid-3" style={{ gap: '2rem' }}>
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
+                        gap: '3rem 2rem'
+                    }}>
                         {videos.map((video, idx) => (
-                            useEmbeds ? (
-                                <motion.div
-                                    key={video.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    viewport={{ once: true }}
-                                    style={{
-                                        backgroundColor: '#111',
-                                        borderRadius: '16px',
-                                        overflow: 'hidden',
-                                        border: '1px solid #222',
-                                        boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
-                                    }}
-                                >
-                                    <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
-                                        <iframe
-                                            src={`https://www.youtube.com/embed/${video.id}`}
-                                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
-                                            allowFullScreen
-                                            title={video.title}
-                                        />
-                                    </div>
-                                    <div style={{ padding: '1.25rem' }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#666', marginBottom: '8px', fontSize: '0.8rem' }}>
-                                            <Calendar size={12} />
-                                            {video.date}
-                                        </div>
-                                        <h3 style={{
-                                            fontSize: '1.1rem',
-                                            fontWeight: 700,
-                                            lineHeight: 1.4,
-                                            color: 'white'
-                                        }}>
-                                            {video.title}
-                                        </h3>
-                                    </div>
-                                </motion.div>
-                            ) : (
-                                <motion.a
-                                    key={video.id}
-                                    href={`https://www.youtube.com/watch?v=${video.id}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    viewport={{ once: true }}
-                                    whileHover={{ y: -10 }}
-                                    style={{
-                                        textDecoration: 'none',
-                                        color: 'white',
-                                        display: 'block',
-                                        backgroundColor: '#111',
-                                        borderRadius: '16px',
-                                        overflow: 'hidden',
-                                        boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                                        border: '1px solid #222'
-                                    }}
-                                >
-                                    <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden' }}>
-                                        <img
-                                            src={video.thumbnail}
-                                            alt={video.title}
-                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                        />
-                                        <div style={{
-                                            position: 'absolute',
-                                            inset: 0,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            background: 'rgba(0,0,0,0.2)',
-                                            opacity: 0,
-                                            transition: '0.3s ease-in-out',
-                                        }} className="play-overlay">
-                                            <div style={{
-                                                width: '60px',
-                                                height: '60px',
-                                                backgroundColor: 'var(--color-coral)',
-                                                borderRadius: '50%',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                boxShadow: '0 0 30px var(--color-coral)'
-                                            }}>
-                                                <Play fill="white" size={24} />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style={{ padding: '1.5rem' }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#666', marginBottom: '10px', fontSize: '0.85rem' }}>
-                                            <Calendar size={14} />
-                                            {video.date}
-                                        </div>
-                                        <h3 style={{
-                                            fontSize: '1.2rem',
-                                            fontWeight: 700,
-                                            lineHeight: 1.4,
-                                            display: '-webkit-box',
-                                            WebkitLineClamp: 2,
-                                            WebkitBoxOrient: 'vertical',
-                                            overflow: 'hidden'
-                                        }}>
-                                            {video.title}
-                                        </h3>
-                                    </div>
-                                </motion.a>
-                            )
+                            <motion.div
+                                key={video.id}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: idx * 0.1 }}
+                                viewport={{ once: true }}
+                                style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}
+                            >
+                                <div style={{
+                                    position: 'relative',
+                                    paddingBottom: '56.25%',
+                                    height: 0,
+                                    borderRadius: '12px',
+                                    overflow: 'hidden',
+                                    backgroundColor: '#000',
+                                    boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
+                                }}>
+                                    <iframe
+                                        src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
+                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                        title={video.title}
+                                    />
+                                </div>
+                                <div style={{ padding: '0 0.5rem' }}>
+                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 800, lineHeight: 1.4, color: '#fff', marginBottom: '0.4rem' }}>{video.title}</h3>
+                                    <div style={{ fontSize: '0.85rem', color: 'var(--color-coral)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>Talk With Yagnesh • {video.date}</div>
+                                </div>
+                            </motion.div>
                         ))}
                     </div>
                 )}

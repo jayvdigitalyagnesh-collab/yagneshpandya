@@ -26,7 +26,7 @@ const Podcast = () => {
                     order: 1
                 }}>
                     <img
-                        src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1600"
+                        src="/slider/23.png"
                         alt="Talk With Yagnesh Podcast"
                         style={{
                             width: '100%',
