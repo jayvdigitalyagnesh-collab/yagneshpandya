@@ -30,7 +30,7 @@ const Footer = () => {
 
                         {/* COLUMN 1: LOGO */}
                         <div>
-                            <img src="/sig.png" alt="Yagnesh Pandya" style={{ height: '100px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
+                            <img src="/sig.webp" alt="Yagnesh Pandya" style={{ height: '100px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
                             <p style={{ color: '#666', fontSize: '0.8rem', marginTop: '0.5rem' }}>Digital Yagnesh</p>
                         </div>
 
@@ -40,12 +40,23 @@ const Footer = () => {
                             <p style={{ color: '#999', marginBottom: '2rem', lineHeight: 1.5 }}>
                                 Be the first one to receive new releases, special offers, and more
                             </p>
-                            <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            <form
+                                onSubmit={(e) => {
+                                    e.preventDefault();
+                                    const name = e.target.fname.value;
+                                    const email = e.target.email.value;
+                                    const whatsappMessage = `inquiry from website:%0A%0A*Name:* ${name}%0A*Email:* ${email}`;
+                                    window.open(`https://wa.me/919998584960?text=${whatsappMessage}`, '_blank');
+                                }}
+                                style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
+                            >
                                 <div>
                                     <label style={{ display: 'none' }}>First Name</label>
                                     <input
                                         type="text"
+                                        name="fname"
                                         placeholder="First Name"
+                                        required
                                         style={{
                                             width: '100%',
                                             padding: '0.8rem 0',
@@ -62,7 +73,9 @@ const Footer = () => {
                                     <label style={{ display: 'none' }}>Email Address</label>
                                     <input
                                         type="email"
+                                        name="email"
                                         placeholder="Email Address"
+                                        required
                                         style={{
                                             width: '100%',
                                             padding: '0.8rem 0',
@@ -75,7 +88,7 @@ const Footer = () => {
                                         }}
                                     />
                                 </div>
-                                <button className="btn-coral" style={{
+                                <button type="submit" className="btn-coral" style={{
                                     width: '100%',
                                     padding: '1rem',
                                     borderRadius: '4px',

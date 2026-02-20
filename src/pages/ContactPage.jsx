@@ -10,7 +10,14 @@ const ContactPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission logic here
+        const formData = new FormData(e.target);
+        const name = formData.get('userName');
+        const email = formData.get('userEmail');
+        const subject = formData.get('userSubject');
+        const message = formData.get('userMessage');
+
+        const whatsappMessage = `inquiry from website:%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+        window.open(`https://wa.me/919998584960?text=${whatsappMessage}`, '_blank');
     };
 
     return (
@@ -64,6 +71,7 @@ const ContactPage = () => {
                                         <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.9rem', color: '#666' }}>Full Name</label>
                                         <input
                                             type="text"
+                                            name="userName"
                                             placeholder="Your Name"
                                             required
                                             style={{
@@ -84,6 +92,7 @@ const ContactPage = () => {
                                         <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.9rem', color: '#666' }}>Email Address</label>
                                         <input
                                             type="email"
+                                            name="userEmail"
                                             placeholder="Your Email"
                                             required
                                             style={{
@@ -105,6 +114,7 @@ const ContactPage = () => {
                                     <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.9rem', color: '#666' }}>Subject</label>
                                     <input
                                         type="text"
+                                        name="userSubject"
                                         placeholder="What are you interested in?"
                                         style={{
                                             padding: '1.2rem',
@@ -124,6 +134,7 @@ const ContactPage = () => {
                                     <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.9rem', color: '#666' }}>Message</label>
                                     <textarea
                                         rows="6"
+                                        name="userMessage"
                                         placeholder="How can I help you?"
                                         required
                                         style={{
@@ -178,7 +189,7 @@ const ContactPage = () => {
                                         </div>
                                         <div>
                                             <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.6, textTransform: 'uppercase', fontWeight: 700 }}>Email Us</p>
-                                            <a href="mailto:hello@digitalyagnesh.com" style={{ color: 'white', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 600 }}>hello@digitalyagnesh.com</a>
+                                            <a href="mailto:digitalyagnesh201@gmail.com" style={{ color: 'white', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 600 }}>digitalyagnesh201@gmail.com</a>
                                         </div>
                                     </div>
                                     <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
@@ -187,7 +198,7 @@ const ContactPage = () => {
                                         </div>
                                         <div>
                                             <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.6, textTransform: 'uppercase', fontWeight: 700 }}>WhatsApp</p>
-                                            <a href="tel:+910000000000" style={{ color: 'white', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 600 }}>+91 (Book a call)</a>
+                                            <a href="https://wa.me/919998584960" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 600 }}>+91 99985 84960</a>
                                         </div>
                                     </div>
                                     <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
@@ -196,7 +207,7 @@ const ContactPage = () => {
                                         </div>
                                         <div>
                                             <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.6, textTransform: 'uppercase', fontWeight: 700 }}>Location</p>
-                                            <p style={{ margin: 0, fontSize: '1.2rem', fontWeight: 600 }}>Available Worldwide (Online)</p>
+                                            <p style={{ margin: 0, fontSize: '1.2rem', fontWeight: 600 }}>Ahmedabad, Gujarat</p>
                                         </div>
                                     </div>
                                 </div>

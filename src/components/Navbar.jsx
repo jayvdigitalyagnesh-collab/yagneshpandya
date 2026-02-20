@@ -58,7 +58,7 @@ const Navbar = () => {
           display: 'flex',
           alignItems: 'center',
         }}>
-          <img src="/sig.png" alt="Yagnesh Pandya" style={{ height: '80px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
+          <img src="/sig.webp" alt="Yagnesh Pandya" style={{ height: '80px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
         </NavLink>
 
         {/* Desktop Nav */}

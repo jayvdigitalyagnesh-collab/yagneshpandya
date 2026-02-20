@@ -43,7 +43,7 @@ const AboutPage = () => {
                         </div>
                         <div style={{ position: 'relative' }}>
                             <img
-                                src="/slider/27.png"
+                                src="/slider/27.webp"
                                 alt="Early Days"
                                 style={{ width: '100%', borderRadius: '4px', boxShadow: '20px 20px 0 #f0f0f0' }}
                             />
@@ -64,9 +64,9 @@ const AboutPage = () => {
                     </div>
                     <div className="grid-3">
                         {[
-                            { title: "Time Freedom", img: "/slider/26.png", desc: "Wake up when you want." },
-                            { title: "Global Impact", img: "/slider/25.png", desc: "Build a brand that matters." },
-                            { title: "Generational Wealth", img: "/slider/24.png", desc: "Secure your family's future." }
+                            { title: "Time Freedom", img: "/slider/26.webp", desc: "Wake up when you want." },
+                            { title: "Global Impact", img: "/slider/25.webp", desc: "Build a brand that matters." },
+                            { title: "Generational Wealth", img: "/slider/24.webp", desc: "Secure your family's future." }
                         ].map((card, i) => (
                             <div key={i} style={{ position: 'relative', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
                                 <img src={card.img} alt={card.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -102,7 +102,7 @@ const AboutPage = () => {
                         </div>
                         <div>
                             <img
-                                src="/slider/22.png"
+                                src="/slider/22.webp"
                                 alt="Yagnesh Meeting"
                                 style={{ width: '100%', borderRadius: '8px' }}
                             />
@@ -116,7 +116,7 @@ const AboutPage = () => {
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
                         <img
-                            src="/slider/20.png"
+                            src="/slider/20.webp"
                             alt="Yagnesh Portrait"
                             style={{ width: '100%', borderRadius: '8px', filter: 'grayscale(100%)' }}
                         />

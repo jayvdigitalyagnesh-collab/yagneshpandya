@@ -255,7 +255,7 @@ const PodcastPage = () => {
                             cursor: 'pointer',
                             marginTop: '0.5rem'
                         }}>
-                            Send me the Plan (FREE)
+                            Submit
                         </button>
                     </div>
                 </div>

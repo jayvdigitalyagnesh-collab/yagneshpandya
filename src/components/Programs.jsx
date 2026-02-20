@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Reveal } from './Reveal';
 
-import { ArrowUpRight, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowUpRight, ShieldCheck, Zap, Globe, TrendingUp, Megaphone, PenTool, Smartphone, Code } from 'lucide-react';
 
 const Programs = () => {
     const programs = [
@@ -10,7 +10,7 @@ const Programs = () => {
             title: 'Digital Yagnesh',
             tagline: 'STRATEGY & GROWTH',
             description: 'Premium digital marketing, branding, and web development for high-growth companies looking to dominate their market.',
-            image: '/dy.png',
+            image: '/dy.webp',
             link: 'https://www.digitalyagnesh.com/',
             icon: <Zap size={20} />
         },
@@ -18,7 +18,7 @@ const Programs = () => {
             title: 'Talk With Yagnesh',
             tagline: 'AUTHORITY & MEDIA',
             description: 'Deep-dive conversations with global entrepreneurs. Scaling your authority through cinematic podcasting and storytelling.',
-            image: '/podcast.png',
+            image: '/podcast.webp',
             link: 'https://www.youtube.com/@talkwithyagnesh',
             icon: <ShieldCheck size={20} />
         }
@@ -76,12 +76,7 @@ const Programs = () => {
                                 letterSpacing: '-0.03em',
                                 marginBottom: '2rem'
                             }}>
-                                Step-By-Step <br /> Programs For A <br />
-                                <span style={{
-                                    color: 'transparent',
-                                    WebkitTextStroke: '1px #000',
-                                    fontWeight: 900
-                                }}>RICH LIFE</span>
+                                Step-By-Step <br /> Programs For A <br /> RICH LIFE
                             </h2>
                         </Reveal>
 
@@ -122,33 +117,170 @@ const Programs = () => {
                             }}
                             className="program-creative-card"
                         >
-                            {/* Image Part */}
+                            {/* Visualization Part */}
                             <div style={{
                                 order: idx % 2 === 0 ? 1 : 2,
                                 height: '500px',
                                 overflow: 'hidden',
-                                position: 'relative'
+                                position: 'relative',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
                             }}>
-                                <motion.img
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 1.2, ease: [0.33, 1, 0.68, 1] }}
-                                    src={program.image}
-                                    alt={program.title}
-                                    style={{
+                                {program.title === 'Digital Yagnesh' ? (
+                                    // 1. CUSTOM ANIMATED DIGITAL GALAXY
+                                    <div style={{
                                         width: '100%',
                                         height: '100%',
-                                        objectFit: 'cover'
-                                    }}
-                                />
-                                <div style={{
-                                    position: 'absolute',
-                                    inset: 0,
-                                    background: 'linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 60%)'
-                                }} />
+                                        background: '#ffffff',
+                                        position: 'relative',
+                                        overflow: 'hidden',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}>
+                                        {/* Background Grid */}
+                                        <div style={{
+                                            position: 'absolute',
+                                            inset: 0,
+                                            backgroundImage: 'linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)',
+                                            backgroundSize: '40px 40px',
+                                        }} />
+
+                                        {/* Grid Mask (Fade out grid in center) */}
+                                        <div style={{
+                                            position: 'absolute',
+                                            inset: 0,
+                                            background: 'radial-gradient(circle at center, #ffffff 30%, transparent 70%)',
+                                            pointerEvents: 'none'
+                                        }} />
+
+                                        {/* Central Core */}
+                                        <motion.div
+                                            animate={{ scale: [1, 1.05, 1] }}
+                                            transition={{ duration: 4, repeat: Infinity }}
+                                            style={{
+                                                width: '180px',
+                                                height: 'auto',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                zIndex: 10
+                                            }}
+                                        >
+                                            <img
+                                                src="/logo.png"
+                                                alt="Digital Yagnesh"
+                                                style={{ width: '100%', height: 'auto', objectFit: 'contain', mixBlendMode: 'multiply' }}
+                                            />
+                                        </motion.div>
+
+                                        {/* Animated Digital Services */}
+                                        {[
+                                            { src: '/icons/seo.gif', fallback: Globe, color: '#3b82f6', label: 'WEB', x: -120, y: -80, delay: 0 },
+                                            { src: '/icons/advertising.gif', fallback: Megaphone, color: '#ef4444', label: 'ADS', x: 120, y: -80, delay: 1 },
+                                            { src: '/icons/rocket.gif', fallback: TrendingUp, color: '#22c55e', label: 'GROWTH', x: -120, y: 80, delay: 2 },
+                                            { src: '/icons/personal-branding.gif', fallback: PenTool, color: '#a855f7', label: 'BRAND', x: 120, y: 80, delay: 3 },
+                                            { src: '/icons/idea.gif', fallback: Smartphone, color: '#f97316', label: 'SOCIAL', x: 0, y: -140, delay: 4 },
+                                            { src: '/icons/web-developer.gif', fallback: Code, color: '#06b6d4', label: 'DEV', x: 0, y: 140, delay: 1.5 },
+                                        ].map((item, i) => (
+                                            <motion.div
+                                                key={i}
+                                                initial={{ x: item.x, y: item.y, opacity: 0, scale: 0 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
+                                                animate={{
+                                                    y: [item.y - 10, item.y + 10, item.y - 10],
+                                                    rotate: [0, 5, -5, 0]
+                                                }}
+                                                transition={{
+                                                    y: { duration: 3 + i, repeat: Infinity, ease: "easeInOut" },
+                                                    rotate: { duration: 5 + i, repeat: Infinity, ease: "easeInOut" },
+                                                    opacity: { duration: 0.5, delay: i * 0.1 }
+                                                }}
+                                                style={{
+                                                    position: 'absolute',
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    alignItems: 'center',
+                                                    gap: '8px',
+                                                    cursor: 'pointer'
+                                                }}
+                                                whileHover={{ scale: 1.2, zIndex: 10 }}
+                                            >
+                                                <div style={{
+                                                    width: '60px',
+                                                    height: '60px',
+                                                    borderRadius: '16px',
+                                                    backgroundColor: 'white',
+                                                    border: '1px solid #eee',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
+                                                    position: 'relative',
+                                                    overflow: 'hidden'
+                                                }}>
+                                                    {/* Fallback Lucide Icon (Visible if image fails) */}
+                                                    <item.fallback
+                                                        size={28}
+                                                        color={item.color}
+                                                        style={{
+                                                            position: 'absolute',
+                                                        }}
+                                                    />
+
+                                                    {/* Animated GIF (Overlays the icon) */}
+                                                    <img
+                                                        src={item.src}
+                                                        alt={item.label}
+                                                        style={{
+                                                            width: '100%',
+                                                            height: '100%',
+                                                            objectFit: 'cover',
+                                                            position: 'relative',
+                                                            zIndex: 2
+                                                        }}
+                                                        onError={(e) => {
+                                                            e.target.style.display = 'none'; // Hide broken image to show fallback
+                                                        }}
+                                                    />
+                                                </div>
+                                                <span style={{
+                                                    fontSize: '0.75rem',
+                                                    fontWeight: 800,
+                                                    color: '#333',
+                                                    letterSpacing: '1px'
+                                                }}>
+                                                    {item.label}
+                                                </span>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    // 2. STANDARD IMAGE (For other programs)
+                                    <>
+                                        <motion.img
+                                            whileHover={{ scale: 1.05 }}
+                                            transition={{ duration: 1.2, ease: [0.33, 1, 0.68, 1] }}
+                                            src={program.image}
+                                            alt={program.title}
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'cover'
+                                            }}
+                                        />
+                                        <div style={{
+                                            position: 'absolute',
+                                            inset: 0,
+                                            background: 'linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 60%)'
+                                        }} />
+                                    </>
+                                )}
                             </div>
 
                             {/* Content Part */}
-                            <div style={{
+                            < div style={{
                                 order: idx % 2 === 0 ? 2 : 1,
                                 padding: '5rem',
                                 display: 'flex',
@@ -214,7 +346,7 @@ const Programs = () => {
                         </motion.div>
                     ))}
                 </div>
-            </div>
+            </div >
 
             <style dangerouslySetInnerHTML={{
                 __html: `
@@ -226,7 +358,7 @@ const Programs = () => {
                     .program-creative-card > div:last-child { order: 2 !important; padding: 3rem 2rem !important; }
                 }
             `}} />
-        </section>
+        </section >
     );
 };
 

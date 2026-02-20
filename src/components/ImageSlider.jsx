@@ -2,10 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const ImageSlider = () => {
-    // OPTIMIZATION: Reduced number of images to prevent lag (original images are very high res)
-    // Loading only a subset of images to ensure smooth scrolling
-    const row1 = [1, 3, 5, 7, 9, 11, 13].map(i => `/slider/${i}.png`);
-    const row2 = [16, 18, 20, 22, 24, 26].map(i => `/slider/${i}.png`);
+    // OPTIMIZATION: Distributed all available images (1-27) to maximize loop length and prevent repetition on large screens.
+    const row1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(i => `/slider/${i}.webp`);
+    const row2 = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27].map(i => `/slider/${i}.webp`);
 
     const sliderStyle = {
         display: 'flex',
@@ -60,7 +59,7 @@ const ImageSlider = () => {
                     style={{ ...sliderStyle, width: 'max-content' }}
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{
-                        duration: 40, // Increased speed slightly for dynamic feel
+                        duration: 80, // Slower speed for longer list
                         repeat: Infinity,
                         ease: "linear"
                     }}
@@ -84,7 +83,7 @@ const ImageSlider = () => {
                     style={{ ...sliderStyle, width: 'max-content' }}
                     animate={{ x: ["-50%", "0%"] }}
                     transition={{
-                        duration: 35,
+                        duration: 70, // Slower speed for longer list
                         repeat: Infinity,
                         ease: "linear"
                     }}

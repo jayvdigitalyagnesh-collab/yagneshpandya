@@ -43,17 +43,27 @@ const Contact = () => {
                         Join thousands of entrepreneurs who are building profitable, sustainable businesses. Get exclusive insights, strategies, and updates delivered straight to your inbox.
                     </p>
 
-                    <form style={{
-                        display: 'flex',
-                        gap: '1rem',
-                        maxWidth: '600px',
-                        margin: '0',
-                        flexWrap: 'wrap',
-                        alignItems: 'center'
-                    }}>
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            const email = e.target.email.value;
+                            const whatsappMessage = `inquiry from website:%0A%0A*Email:* ${email}`;
+                            window.open(`https://wa.me/919998584960?text=${whatsappMessage}`, '_blank');
+                        }}
+                        style={{
+                            display: 'flex',
+                            gap: '1rem',
+                            maxWidth: '600px',
+                            margin: '0',
+                            flexWrap: 'wrap',
+                            alignItems: 'center'
+                        }}
+                    >
                         <input
                             type="email"
+                            name="email"
                             placeholder="Enter your email"
+                            required
                             style={{
                                 flex: 1,
                                 minWidth: '300px',
@@ -69,6 +79,7 @@ const Contact = () => {
                             }}
                         />
                         <button
+                            type="submit"
                             className="btn-coral"
                             style={{
                                 border: 'none',
@@ -101,7 +112,7 @@ const Contact = () => {
                             Get in touch:
                         </p>
                         <a
-                            href="mailto:hello@digitalyagnesh.com"
+                            href="mailto:digitalyagnesh201@gmail.com"
                             style={{
                                 color: 'white',
                                 textDecoration: 'none',
@@ -109,7 +120,7 @@ const Contact = () => {
                                 fontSize: '1.1rem'
                             }}
                         >
-                            hello@digitalyagnesh.com
+                            digitalyagnesh201@gmail.com
                         </a>
                         <a
                             href="https://www.instagram.com/yagneshpandyaofficial/"
