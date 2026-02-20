@@ -2,14 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const ImageSlider = () => {
-    // Generate arrays for 1.png to 27.png
-    const row1 = Array.from({ length: 14 }, (_, i) => `/slider/${i + 1}.png`);
-    const row2 = Array.from({ length: 13 }, (_, i) => `/slider/${i + 15}.png`);
+    // OPTIMIZATION: Reduced number of images to prevent lag (original images are very high res)
+    // Loading only a subset of images to ensure smooth scrolling
+    const row1 = [1, 3, 5, 7, 9, 11, 13].map(i => `/slider/${i}.png`);
+    const row2 = [16, 18, 20, 22, 24, 26].map(i => `/slider/${i}.png`);
 
     const sliderStyle = {
         display: 'flex',
         gap: '20px',
         padding: '10px 0',
+        willChange: 'transform', // Hardware acceleration hint
     };
 
     const imageStyle = {
@@ -26,7 +28,9 @@ const ImageSlider = () => {
         overflow: 'hidden',
         width: '100%',
         backgroundColor: '#fff',
-        padding: '80px 0'
+        padding: '80px 0',
+        contentVisibility: 'auto', // Skip rendering work if off-screen
+        contain: 'content'
     };
 
     return (
@@ -56,7 +60,7 @@ const ImageSlider = () => {
                     style={{ ...sliderStyle, width: 'max-content' }}
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{
-                        duration: 60,
+                        duration: 40, // Increased speed slightly for dynamic feel
                         repeat: Infinity,
                         ease: "linear"
                     }}
@@ -68,6 +72,7 @@ const ImageSlider = () => {
                             alt={`Workshop Event ${index}`}
                             style={imageStyle}
                             loading="lazy"
+                            decoding="async" // Async decoding to prevent main thread blocking
                         />
                     ))}
                 </motion.div>
@@ -79,7 +84,7 @@ const ImageSlider = () => {
                     style={{ ...sliderStyle, width: 'max-content' }}
                     animate={{ x: ["-50%", "0%"] }}
                     transition={{
-                        duration: 55,
+                        duration: 35,
                         repeat: Infinity,
                         ease: "linear"
                     }}
@@ -91,6 +96,7 @@ const ImageSlider = () => {
                             alt={`Workshop Event ${index + 15}`}
                             style={imageStyle}
                             loading="lazy"
+                            decoding="async"
                         />
                     ))}
                 </motion.div>

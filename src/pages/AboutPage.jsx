@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, Star, Mic, BookOpen } from 'lucide-react';
-import About from '../components/About'; // The "I'M YAGNESH" Hero
+import About from '../components/About';
 import Contact from '../components/Contact';
 import { Reveal } from '../components/Reveal';
 
@@ -10,16 +10,12 @@ const AboutPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-
-
     return (
         <div className="about-page">
-            {/* 1. HERO SECTION (Already Built) */}
+            {/* 1. HERO SECTION */}
             <About />
 
-
-
-            {/* 3. EARLY LEARNINGS SECTION */}
+            {/* 2. EARLY LEARNINGS SECTION */}
             <section style={{ padding: 'var(--section-padding)', backgroundColor: 'white' }}>
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
@@ -47,7 +43,7 @@ const AboutPage = () => {
                         </div>
                         <div style={{ position: 'relative' }}>
                             <img
-                                src="/slider/10.png"
+                                src="/slider/27.png"
                                 alt="Early Days"
                                 style={{ width: '100%', borderRadius: '4px', boxShadow: '20px 20px 0 #f0f0f0' }}
                             />
@@ -56,7 +52,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* 4. RICH LIFE GRID */}
+            {/* 3. RICH LIFE GRID */}
             <section style={{ padding: 'var(--section-padding)', backgroundColor: '#F8F8F8' }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -68,9 +64,9 @@ const AboutPage = () => {
                     </div>
                     <div className="grid-3">
                         {[
-                            { title: "Time Freedom", img: "/slider/11.png", desc: "Wake up when you want." },
-                            { title: "Global Impact", img: "/slider/12.png", desc: "Build a brand that matters." },
-                            { title: "Generational Wealth", img: "/slider/13.png", desc: "Secure your family's future." }
+                            { title: "Time Freedom", img: "/slider/26.png", desc: "Wake up when you want." },
+                            { title: "Global Impact", img: "/slider/25.png", desc: "Build a brand that matters." },
+                            { title: "Generational Wealth", img: "/slider/24.png", desc: "Secure your family's future." }
                         ].map((card, i) => (
                             <div key={i} style={{ position: 'relative', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
                                 <img src={card.img} alt={card.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -85,7 +81,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* 5. NEWSLETTER SIGNUP */}
+            {/* 4. NEWSLETTER SIGNUP */}
             <section style={{ padding: 'var(--section-padding)', backgroundColor: 'white' }}>
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
@@ -106,7 +102,7 @@ const AboutPage = () => {
                         </div>
                         <div>
                             <img
-                                src="/slider/14.png"
+                                src="/slider/22.png"
                                 alt="Yagnesh Meeting"
                                 style={{ width: '100%', borderRadius: '8px' }}
                             />
@@ -115,12 +111,12 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* 6. STATS BANNER */}
+            {/* 5. STATS BANNER */}
             <section style={{ backgroundColor: '#111', color: 'white', padding: 'var(--section-padding)' }}>
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
                         <img
-                            src="/slider/15.png"
+                            src="/slider/20.png"
                             alt="Yagnesh Portrait"
                             style={{ width: '100%', borderRadius: '8px', filter: 'grayscale(100%)' }}
                         />
@@ -146,50 +142,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* 7. BOOKS / PRODUCTS */}
-            <section style={{ padding: 'var(--section-padding)', backgroundColor: '#F0F0F0' }}>
-                <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
-                        <div style={{ order: 2 }}>{/* Text Side on Right */}
-                            <Reveal>
-                                <h2 style={{ fontSize: '3rem', fontWeight: 900, textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-                                    Creator of Premium <br /> Digital Programs
-                                </h2>
-                            </Reveal>
-                            <p style={{ fontSize: '1.2rem', color: '#555', marginBottom: '2rem' }}>
-                                Rigorously tested systems to help you start a business, find your dream job, or master your productivity.
-                            </p>
-                            <a href="#" className="btn-coral" style={{ padding: '1rem 2rem' }}>View All Programs</a>
-                        </div>
-                        <div style={{ order: 1 }}>
-                            <img
-                                src="/slider/16.png"
-                                alt="Programs"
-                                style={{ width: '100%', transform: 'rotate(-2deg)', boxShadow: '0 20px 50px rgba(0,0,0,0.1)' }}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 8. PODCAST DARK SECTION */}
-            <section style={{ padding: 'var(--section-padding)', backgroundColor: 'black', color: 'white', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
-                    <img src="/slider/17.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-                    <div style={{ maxWidth: '600px' }}>
-                        <Reveal>
-                            <h2 style={{ fontSize: '3.5rem', lineHeight: 1, marginBottom: '2rem', textTransform: 'uppercase' }}>
-                                The Talk With <br /> Yagnesh Podcast
-                            </h2>
-                        </Reveal>
-                        <a href="#" className="btn-coral" style={{ padding: '1rem 2rem' }}>Listen Now</a>
-                    </div>
-                </div>
-            </section>
-
-            {/* Footer CTAs included in Contact or Footer component */}
+            <Contact />
 
             <style dangerouslySetInnerHTML={{
                 __html: `

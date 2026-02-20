@@ -9,6 +9,8 @@ import YoutubeGrid from '../components/YoutubeGrid';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 
+import Clients from '../components/Clients';
+
 const Home = () => {
     return (
         <div className="home-page">
@@ -19,7 +21,7 @@ const Home = () => {
             <ImageSlider />
             <Podcast />
             <YoutubeGrid title="Talk With Yagnesh On YouTube" maxResults={12} />
-            <Testimonials />
+            <Clients />
             <Contact />
         </div>
     );
