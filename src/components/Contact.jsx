@@ -82,7 +82,6 @@ const Contact = () => {
                             type="submit"
                             className="btn-coral"
                             style={{
-                                border: 'none',
                                 fontSize: '1.1rem',
                                 padding: '1.25rem 3rem',
                                 fontWeight: 700,

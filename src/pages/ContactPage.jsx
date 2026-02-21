@@ -27,7 +27,7 @@ const ContactPage = () => {
                 <div className="container">
                     <Reveal>
                         <h1 style={{
-                            fontSize: 'clamp(3.5rem, 8vw, 7rem)',
+                            fontSize: 'clamp(2.5rem, 10vw, 7rem)',
                             fontWeight: 900,
                             lineHeight: 0.9,
                             textTransform: 'uppercase',
@@ -65,10 +65,10 @@ const ContactPage = () => {
                                     Send A Message
                                 </h2>
                             </Reveal>
-                            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
                                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                                        <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.9rem', color: '#666' }}>Full Name</label>
+                                        <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.85rem', color: '#666' }}>Full Name</label>
                                         <input
                                             type="text"
                                             name="userName"
@@ -89,7 +89,7 @@ const ContactPage = () => {
                                         />
                                     </div>
                                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                                        <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.9rem', color: '#666' }}>Email Address</label>
+                                        <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.85rem', color: '#666' }}>Email Address</label>
                                         <input
                                             type="email"
                                             name="userEmail"
@@ -111,7 +111,7 @@ const ContactPage = () => {
                                     </div>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                                    <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.9rem', color: '#666' }}>Subject</label>
+                                    <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.85rem', color: '#666' }}>Subject</label>
                                     <input
                                         type="text"
                                         name="userSubject"
@@ -131,7 +131,7 @@ const ContactPage = () => {
                                     />
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                                    <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.9rem', color: '#666' }}>Message</label>
+                                    <label style={{ fontWeight: 700, textTransform: 'uppercase', fontSize: '0.85rem', color: '#666' }}>Message</label>
                                     <textarea
                                         rows="6"
                                         name="userMessage"
@@ -162,7 +162,6 @@ const ContactPage = () => {
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     gap: '1rem',
-                                    border: 'none',
                                     cursor: 'pointer'
                                 }}>
                                     Submit Message <Send size={20} />
@@ -249,10 +248,17 @@ const ContactPage = () => {
             <style dangerouslySetInnerHTML={{
                 __html: `
                 @media (max-width: 900px) {
-                    .contact-grid { grid-template-columns: 1fr !important; gap: 4rem !important; }
-                    .info-card { padding: 2.5rem !important; }
+                    .contact-page section:first-child { padding: 8rem 0 5rem !important; }
+                    .contact-page section:nth-child(2) { padding: 4rem 0 !important; }
+                    .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+                    .info-card { padding: 2rem !important; }
                     .contact-grid > div:first-child { order: 2; }
                     .contact-grid > div:last-child { order: 1; }
+                    h2 { fontSize: 2rem !important; margin-bottom: 2rem !important; }
+                }
+                @media (max-width: 600px) {
+                    .info-card a { font-size: 1rem !important; }
+                    .info-card p { font-size: 0.8rem !important; }
                 }
             `}} />
         </div>

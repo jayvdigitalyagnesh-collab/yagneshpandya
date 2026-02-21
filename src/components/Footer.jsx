@@ -95,7 +95,6 @@ const Footer = () => {
                                     fontWeight: 700,
                                     fontSize: '1.1rem',
                                     marginTop: '1rem',
-                                    border: 'none',
                                     cursor: 'pointer'
                                 }}>
                                     Join Now
