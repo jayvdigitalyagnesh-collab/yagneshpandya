@@ -1174,7 +1174,7 @@ const AboutPage = () => {
                     }
                 }
             `}</style>
-        </div>
+        </div >
     );
 };
 

@@ -10,6 +10,7 @@ import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 
 import Clients from '../components/Clients';
+import Marquee from '../components/Marquee';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Hero />
             {/* About section is REMOVED from Home so it's exclusive to /about page */}
             <Programs />
+            <Marquee />
             <Workshops />
             <ImageSlider />
             <Podcast />
